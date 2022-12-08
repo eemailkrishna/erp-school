@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/icon" href=""/>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Ionicons -->
-  <!-- DataTables -->
+
   <link rel="stylesheet" href="{{url('assests/css/dist/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{url('assests/css/font-awesome/css/font-awesome.min.css')}}">
   <link rel="stylesheet" href="{{url('assests/css/AdminLTE.min.css')}}">
@@ -37,7 +36,7 @@ input:focus {
   color:#f00;
 }
 </style>
-  <!-- Ionicons -->
+
 	  <style>
      .load-bar {
   position: relative;
