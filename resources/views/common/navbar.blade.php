@@ -224,17 +224,17 @@ display:block;
 		 	<li><a href="{{url('download')}}"><i class="fa fa-download"></i> <span>Downloads</span></a></li>
 		 	<li><a href="{{url('recycle-bin')}}"><i class="fa fa-bell-o"></i> <span>Recycle bin</span></a></li>
 		 	<li><a href="{{url('/session')}}"><i class="fa fa-building-o"></i> <span>Session</span></a></li>
-		 	<li><a href="{{url('/reminder')}}"><i class="fa fa-bell-o"></i> <span>Reminder</span></a></li>
+		 	<li><a href="{{url('reminder')}}"><i class="fa fa-bell-o"></i> <span>Reminder</span></a></li>
 		 	<li><a href="{{url('govt-requirement')}}"><i class="fa fa-circle-o"></i> <span>Govt. Requir.</span></a></li>
 		 	<li><a href="javascript:get_content('school_info/school_info')"><i class="fa fa-user"></i> <span>School Info</span></a></li>
 		 	<li><a href="javascript:get_content('utility/utilities')"><i class="fa fa-bell-o"></i> <span>Typing Tool</span></a></li>
 		 	<li><a href="javascript:get_content('bus/bus')"><i class="fa fa-bus"></i> <span>Bus</span></a></li>
-		 	<li><a href="javascript:get_content('hostel/hostel')"><i class="fa fa-hotel"></i> <span>Hostel</span></a></li>
-	 		<li><a href="javascript:get_content('library/library')"><i class="fa fa-book"></i> <span>Library</span></a></li>
-	 		<li><a href="javascript:get_content('stock/stock')"><i class="fa fa-area-chart"></i> <span>Stocks</span></a></li>
-	 		  <li><a href="javascript:get_content('live_bus/bus_tracking')"><i class="fa fa-bus"></i> <span>Live Bus</span></a></li>
-	 		<li><a href="javascript:get_content('android_app/android_app')"><i class="fa fa-hotel"></i> <span>Android App</span></a></li>
-	 		<li><a href="javascript:get_content('user_right/user_right')"><i class="fa fa-book"></i> <span>User Rights</span></a></li>
+		 	<li><a href="{{url('hostel')}}"><i class="fa fa-hotel"></i> <span>Hostel</span></a></li>
+	 		<li><a href="{{url('library')}}"><i class="fa fa-book"></i> <span>Library</span></a></li>
+	 		<li><a href="{{url('stock')}}"><i class="fa fa-area-chart"></i> <span>Stocks</span></a></li>
+	 		  <li><a href="{{url('live-bus')}}"><i class="fa fa-bus"></i> <span>Live Bus</span></a></li>
+	 		<li><a href="{{url('app')}}"><i class="fa fa-hotel"></i> <span>Android App</span></a></li>
+	 		<li><a href="{{url('user-right')}}"><i class="fa fa-book"></i> <span>User Rights</span></a></li>
 	   <li><a href="javascript:get_content('school_info/change_password')"><i class="fa fa-unlock-alt"></i> <span>Change Password</span></a></li>
 		<li><a href="javascript:get_content('attachment/logout')"><i class="fa fa-sign-out"></i> <span>Log Out</span></a></li>
       <li><a href="javascript:get_content('gps_tracker/gps_tracker')"><i class="fa fa-sign-out"></i> <span>gps_tracker</span></a></li>

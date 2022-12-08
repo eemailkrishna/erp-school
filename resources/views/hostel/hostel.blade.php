@@ -1,4 +1,7 @@
- <script>
+@include('common.header');
+@include('common.navbar');
+
+<script>
 window.scrollTo(0, 0);
 </script>
 <section class="content-header">
@@ -61,8 +64,8 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-		
-	
+
+
 	 		 	 	  		<a href="javascript:get_content('hostel/staff')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#FF7E00;">
@@ -133,7 +136,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-		
+
 	 		 	 	  		<a href="javascript:get_content('hostel/hostel_account')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#551B8C;">
@@ -148,7 +151,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-	 		 	 	 
+
 
 		</div>
       </div>
@@ -159,9 +162,9 @@ window.scrollTo(0, 0);
 		<!--</div>-->
 		<!--<div class="box-body">-->
 
-		
-		
-		
+
+
+
 		<!--</div>-->
 	 <!-- </div>-->
 	 <!-- <div class="box" style="display:none;">-->
@@ -171,8 +174,9 @@ window.scrollTo(0, 0);
 		<!--</div>-->
 		<!--<div class="box-body">-->
 
-		
-		
+
+
 		<!--</div>-->
 	 <!-- </div>-->
     </section>
+@include('common.footer');

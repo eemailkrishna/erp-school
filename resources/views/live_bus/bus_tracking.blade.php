@@ -1,3 +1,6 @@
+  @include('common.header');
+  @include('common.navbar');
+
   <script>
 window.scrollTo(0, 0);
 </script>
@@ -67,9 +70,10 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-      
-		
+
+
 		</div>
 	  </div>
     </section>
-    
+
+  @include('common.footer');

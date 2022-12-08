@@ -1,3 +1,6 @@
+@include('common.header');
+@include('common.navbar');
+
 <script>
 window.scrollTo(0, 0);
 </script>
@@ -47,7 +50,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-	
+
 
 		</div>
       </div>
@@ -58,9 +61,9 @@ window.scrollTo(0, 0);
 		<!--</div>-->
 		<!--<div class="box-body">-->
 
-		
-		
-		
+
+
+
 		<!--</div>-->
 	 <!-- </div>-->
 	 <!-- <div <div class="box box-success" >>-->
@@ -84,8 +87,8 @@ window.scrollTo(0, 0);
 		<!--				</div>-->
 		<!--			</div>-->
 		<!--			</a>-->
-					
-					
+
+
 		<!--			<a href="../school_software_v1_old/userhelp/User Right.pdf" target="_blank"">-->
 		<!--			<div class="col-lg-3 col-xs-6">-->
 		<!--				<div class="small-box" style="background-color:green;">-->
@@ -100,7 +103,8 @@ window.scrollTo(0, 0);
 		<!--				</div>-->
 		<!--			</div>-->
 					</a>
-		
+
 		</div>
 	  </div>
     </section>
+@include('common.footer');

@@ -1,3 +1,6 @@
+ @include('common.header');
+ @include('common.navbar');
+
  <script>
 window.scrollTo(0, 0);
 </script>
@@ -21,7 +24,7 @@ window.scrollTo(0, 0);
 		<h3 class="box-title" style="color:teal;"><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Main Panel</b></h3>
 		</div>
       <div class="box-body">
-       
+
 	  <a href="javascript:get_content('library/library_add_book')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#E32636;">
@@ -106,7 +109,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-					
+
       </div></div>
   <!--    <div class="box box-success" >-->
   <!--        	<div class="box-header with-border">-->
@@ -128,8 +131,8 @@ window.scrollTo(0, 0);
 		<!--				</div>-->
 		<!--			</div>-->
 		<!--			</a>-->
-					
-					
+
+
 		<!--			<a href="../school_software_v1_old/userhelp/Library hindi Pane1.pdf" target="_blank">-->
 		<!--			<div class="col-lg-3 col-xs-6">-->
 		<!--				<div class="small-box" style="background-color:green;">-->
@@ -145,8 +148,10 @@ window.scrollTo(0, 0);
 		<!--			</div>-->
 		<!--			</a>-->
   <!--        </div>-->
-          
+
   <!--    </div>-->
-      
-      
+
+
     </section>
+
+ @include('common.footer');

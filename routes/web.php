@@ -24,29 +24,12 @@ use App\Http\Controllers\RecycleBinController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ReminderCotroller;
 use App\Http\Controllers\GovRequireController;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+use App\Http\Controllers\HostelController;
+use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\StockController;
+use App\Http\Controllers\LiveBusController;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\UserRightController;
 
 
 
@@ -139,3 +122,21 @@ Route::get('/reminder',[ReminderCotroller::class,'reminder'])->name('reminder');
 
 //  govt routes
 Route::get('/govt-requirement',[GovRequireController::class,'gov_requirement'])->name('gov-requirement');
+
+//
+Route::get('/hostel',[HostelController::class,'hostel'])->name('hostel');
+
+//libary  route
+Route::get('/library',[LibraryController::class,'library'])->name('library');
+
+// Stock  routes
+Route::get('/stock',[StockController::class,'stock'])->name('stocks');
+
+// live bus tracking routes
+Route::get('/live-bus',[LiveBusController::class,'live_bus'])->name('live-bus');
+
+//  Android app controller
+Route::get('/app',[AppController::class,'android_app'])->name('app');
+
+//  user right
+Route::get('/user-right',[UserRightController::class,'UserRight'])->name('user-right');

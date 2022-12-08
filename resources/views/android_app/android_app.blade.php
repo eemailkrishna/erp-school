@@ -1,4 +1,7 @@
- <script>
+@include('common.header');
+@include('common.navbar');
+
+<script>
 window.scrollTo(0, 0);
 </script>
     <section class="content-header">
@@ -31,7 +34,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-		
+
 			  <a href="javascript:get_content('android_app/student_user_password_change')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#3498DB;">
@@ -43,7 +46,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-	 
+
         <a href="javascript:get_content('android_app/publish_marks')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#C46210;">
@@ -55,8 +58,9 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-				
+
 		</div>
       </div>
-	 
+
     </section>
+@include('common.footer');
