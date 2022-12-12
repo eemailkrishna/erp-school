@@ -17,7 +17,7 @@
 					<h3 class="box-title" style="color:teal;"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;<b>New Panels</b></h3>
 				</div>
 				<div class="box-body">
-						<a href="javascript:get_content('smartclass/smartclass')">
+						<a href="{{url('smartclass')}}">
 					<div class="col-lg-3 col-xs-6">
 					  <div class="small-box" style="background-color:#884EA0;">
 						<div class="inner"><br>

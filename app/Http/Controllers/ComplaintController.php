@@ -9,4 +9,5 @@ class ComplaintController extends Controller
     public function complaint(){
         return view('complaint.complaint');
     }
+
 }

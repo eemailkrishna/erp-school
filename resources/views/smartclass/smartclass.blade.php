@@ -1,9 +1,12 @@
+
+@include('common.header');
+@include('common.navbar');
     <section class="content-header">
       <h1>
           Smart Class
       </h1>
       <ol class="breadcrumb">
-	 <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i>Home</a></li>
+	 <li><a href="{{url('index_content')}}"><i class="fa fa-dashboard"></i>Home</a></li>
 	  <li class="active">Smart Class</li>
       </ol>
     </section>
@@ -15,7 +18,7 @@
 				<br>
 <div class="box-body">
 
- <a href="javascript:get_content('smartclass/video_lecture')">
+ <a href="{{url('smartclass/video_lecture')}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#808000;">
             <div class="inner"><br>
@@ -112,7 +115,7 @@
           </div>
         </div>
 		</a>
-				
+
 			<a href="javascript:get_content('smartclass/active_user_list')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#008000;">
@@ -124,7 +127,7 @@
           </div>
         </div>
 		</a>
-		
+
 					<a href="javascript:get_content('smartclass/liveclass')">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#F4a943;">
@@ -137,6 +140,6 @@
         </div>
 		</a>
 			      </div>
-      
+
     </section>
-  
+  @include('common.footer');

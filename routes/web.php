@@ -30,7 +30,9 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\LiveBusController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\UserRightController;
-
+use App\http\Controllers\SmartClassController;
+use App\Http\Controllers\VideoLectureController;
+use App\Http\Controllers\VideoLectureAddController;
 
 
 
@@ -140,3 +142,12 @@ Route::get('/app',[AppController::class,'android_app'])->name('app');
 
 //  user right
 Route::get('/user-right',[UserRightController::class,'UserRight'])->name('user-right');
+
+// smartclass
+Route::get('/smartclass',[SmartClassController::class,'SmartClass'])->name('smartclass');
+
+// video-lecture
+Route::get('smartclass/video_lecture',[VideoLectureController::class,'VideoLecture'])->name('videolecture');
+
+// VideoLectureAdd
+Route::get('smartclass/video_lecture_add',[VideoLectureAddController::class,'VideoLectureAdd'])->name('videolectureadd');

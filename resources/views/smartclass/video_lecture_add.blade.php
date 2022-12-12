@@ -1,6 +1,7 @@
-
+@include('common.header');
+@include('common.navbar');
 <script>
-	  
+
    function for_section(value){
        $('#student_class_section').html("<option value='' >Loading....</option>");
         if(value!=''){
@@ -36,7 +37,7 @@ window.scrollTo(0, 0);
             cache: false,
             processData: false,
             success: function(detail){
-               
+
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
 				   alert_new('Video Link Successfully Added!!!','green');
@@ -62,7 +63,7 @@ window.scrollTo(0, 0);
 			cache: false,
 			success: function(detail){
 			 $("#subject_name").html(detail);
-		
+
 			}
 			});
 			}
@@ -85,7 +86,7 @@ $("#student_class_group").attr('required',false);
 			  type: "POST",
              url:  access_link+"important_ajax/get_group_all.php?stream_name="+value1+"",
               cache: false,
-              success: function(detail1){			   
+              success: function(detail1){
                   $("#student_class_group").html(detail1);
               }
            });
@@ -99,7 +100,7 @@ $("#student_class_group").attr('required',false);
       </h1>
       <ol class="breadcrumb">
          <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
-         
+
         <li><a href="javascript:get_content('smartclass/smartclass')"><i class="fa fa-book"></i> Smart Class</a></li>
         <li><a href="javascript:get_content('smartclass/video_lecture')"><i class="fa fa-book"></i> Video Lecture</a></li>
         <li class="active"><i class="fa fa-user-plus"></i>Add Video Lecture</li>
@@ -113,7 +114,7 @@ $("#student_class_group").attr('required',false);
             <div class="box-body">
   <form role="form" method="post" enctype="multipart/form-data" id="my_form">
  <div class="col-md-12">
-			   <div class="col-md-3">	
+			   <div class="col-md-3">
 					<div class="form-group" >
 					    <label>Class<font style="color:red"><b>*</b></font></label>
 					    <select name="class_name" onchange="for_section(this.value);for_subject();for_stream(this.value)" id="class_name" class="form-control" required>
@@ -136,7 +137,7 @@ $("#student_class_group").attr('required',false);
 				           					    </select>
 					</div>
 				</div>
-					<div class="col-md-3 " id="student_class_stream_div" style="display:none;">				
+					<div class="col-md-3 " id="student_class_stream_div" style="display:none;">
 					<div class="form-group">
 					  <label >Stream<font style="color:red"><b>*</b></font></label>
 					    <select class="form-control" name="student_class_stream" id="student_class_stream" onchange="get_group(this.value);for_subject();" >
@@ -146,10 +147,10 @@ $("#student_class_group").attr('required',false);
 					           						       <option value="ARTS">ARTS</option>
 					           						       <option value="Commerce ">Commerce </option>
 					           					    </select>
-					
+
 					</div>
 		</div>
-		<div class="col-md-3" id="student_class_group_div" style="display:none;">				
+		<div class="col-md-3" id="student_class_group_div" style="display:none;">
 					<div class="form-group">
 					  <label >Group<font style="color:red"><b>*</b></font></label>
 					    <select class="form-control" name="student_class_group" id="student_class_group" onchange="for_subject();" >
@@ -159,7 +160,7 @@ $("#student_class_group").attr('required',false);
 					  </select>
 					</div>
 				</div>
-				<div class="col-md-3">	
+				<div class="col-md-3">
 					<div class="form-group" >
 					    <label>Section</label>
 					    <select class="form-control" name="section" id="student_class_section">
@@ -167,7 +168,7 @@ $("#student_class_group").attr('required',false);
 					    </select>
 					</div>
 				</div>
-					<div class="col-md-3 ">				
+					<div class="col-md-3 ">
 			    <div class="form-group" >
 				 <label >Subject Name<font style="color:red"><b>*</b></font></label>
 				 <select class="form-control" name="subject_name" id="subject_name">
@@ -175,34 +176,34 @@ $("#student_class_group").attr('required',false);
 				 </select>
 				 </div>
 				 </div>
-				<div class="col-md-3">	
+				<div class="col-md-3">
 				<div class="form-group" >
 				<label>Date</label>
 			    <input type="date" value="2022-12-03" name="upload_date"   placeholder="Date"  value="" class="form-control">
 				 </div>
 			    </div>
-			<div class="col-md-3">	
+			<div class="col-md-3">
 				<div class="form-group" >
 				<label>Video Title</label>
 			    <input type="text" value="" name="video_title"     class="form-control">
 				 </div>
 			    </div>
-		
-			   <div class="col-md-3">		
+
+			   <div class="col-md-3">
 				<div class="form-group">
 				<label>Remark</label>
 				<input type="text" name="video_remark" placeholder="Remark"  value="" class="form-control" >
 				</div>
 			  </div>
 
-			  	
-			    <div class="col-md-6">	
+
+			    <div class="col-md-6">
 				<div class="form-group" >
 				<label>Video Youtube Link(<s>https://www.youtube.com/watch?v=</s>fE1q8s0NNAA)</label>
 			    <input type="text" value="" name="video_link"  placeholder="eg. fE1q8s0NNAA"  id="video_link"  class="form-control"  required>
 				 </div>
 			    </div>
-				 
+
 	       <div class="col-md-12">
 		        <center><input type="submit" name="btnSave" value="Submit" class="btn  btn-success" /></center>
 		  </div>
@@ -215,4 +216,6 @@ $("#student_class_group").attr('required',false);
       </div>
       </div>
     </section>
+
+@include('common.footer');
     <!-- /.content -->

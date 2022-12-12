@@ -1,4 +1,6 @@
- <script>
+@include('common.header');
+@include('common.navbar');
+<script>
 window.scrollTo(0, 0);
 </script>
 			<section class="content-header">
@@ -7,9 +9,9 @@ window.scrollTo(0, 0);
 					<small>Control Panel</small>
 				</h1>
 				<ol class="breadcrumb">
-				  <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
-				  
-        <li><a href="javascript:get_content('smartclass/smartclass')"><i class="fa fa-book"></i> Smart Class</a></li>
+				  <li><a href="{{url('index_content')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+
+        <li><a href="{{url('smartclass/smartclass')}}"><i class="fa fa-book"></i> Smart Class</a></li>
 					 <li class="active">Video Lecture</li>
 				</ol>
 			</section>
@@ -20,7 +22,7 @@ window.scrollTo(0, 0);
 				</div>
 				<br>
 <div class="box-body">
-					<a href="javascript:get_content('smartclass/video_lecture_add')">
+					<a href="{{url('smartclass/video_lecture_add')}}">
 					<div class="col-lg-3 col-xs-6">
 						<div class="small-box" style="background-color:#1D8348;">
 							<div class="inner"><br>
@@ -43,10 +45,10 @@ window.scrollTo(0, 0);
 						</div>
 					</div>
 					</a>
-					
-					
+
+
 				</div>
-      
+
 
 			</section>
-		
+@include('common.footer');
