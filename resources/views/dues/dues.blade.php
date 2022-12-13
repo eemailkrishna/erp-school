@@ -1,5 +1,5 @@
-@include('common.header');
-@include('common.navbar');
+@include('common.header')
+@include('common.navbar')
 <script>
 window.scrollTo(0, 0);
 </script>
@@ -282,4 +282,4 @@ window.scrollTo(0, 0);
       </div>
 
     </section>
-@include('common.footer');
+@include('common.footer')
