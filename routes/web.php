@@ -269,12 +269,6 @@ Route::get('smartclass/video_lecture',[VideoLectureController::class,'VideoLectu
 
 // VideoLectureAdd
 Route::get('smartclass/video_lecture_add',[VideoLectureAddController::class,'VideoLectureAdd'])->name('videolectureadd');
-<<<<<<< HEAD
-=======
-
-
-
-
 
 //leave
 
@@ -302,4 +296,4 @@ Route::get('/holiday',[HolidayController::class,'index'])->name('holiday');
 Route::get('/holiday-addHoliday',[HolidayController::class,'holidayAddHoliday'])->name('holidayAddHoliday');
 Route::get('/holiday-editHoliday',[HolidayController::class,'holidayEditHoliday'])->name('holidayEditHoliday');
 Route::get('/holiday-holidayList',[HolidayController::class,'holidayHolidayList'])->name('holidayHolidayList');
->>>>>>> f5e753aa3c731a5d4b7eb3085852e48f18388293
+
