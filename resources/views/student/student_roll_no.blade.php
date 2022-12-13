@@ -1,4 +1,5 @@
-
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
 function for_list(){ 
 
@@ -192,7 +193,7 @@ $.ajax({
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
   $(function () {
     $('#example1').DataTable()

@@ -1,4 +1,5 @@
-
+@include('common.header');
+@include('common.navbar');
 <script>
 function for_list(){
 var from_date=document.getElementById('from_date').value;
@@ -90,7 +91,7 @@ function for_print()
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
 function exportTableToExcel(tableID, filename = ''){
     var downloadLink;

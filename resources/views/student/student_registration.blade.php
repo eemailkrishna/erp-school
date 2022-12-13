@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');  
    <section class="content-header">
       <h1>
         Student Management        <small>Control Panel</small>
@@ -544,7 +546,7 @@ function myFunction() {
 </form>
 
 </div>
-
+@include('common.footer');
 <script>
   $(function () {
     $('.select2').select2()

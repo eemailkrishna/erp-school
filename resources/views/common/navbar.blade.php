@@ -58,7 +58,7 @@ display:block;
 </style>
 <header class="main-header" >
     <!-- Logo -->
-    <a href="index.php" class="logo" style="background-image:linear-gradient(to bottom right, #b92b27 , #1565C0);">
+    <a href="{{url('/')}}" class="logo" style="background-image:linear-gradient(to bottom right, #b92b27 , #1565C0);">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini" id="school_name234" >SIMPTION</span>
       <!-- logo for regular state and mobile devices -->
@@ -101,10 +101,10 @@ display:block;
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="javascript:get_content('school_info/school_info_general')" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{url('school_info/school_info_general')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="javascript:get_content('attachment/logout')" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{url('attachment/logout')}}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

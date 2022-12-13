@@ -52,7 +52,7 @@
 					</a>
 					</div>
 				</div>
-          <div <div class="box box-success" >
+          <div  class="box box-success" >
 				<div class="box-header with-border">
 					<h3 class="box-title" style="color:teal;"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;<b>Important</b></h3>
 				</div>
@@ -163,7 +163,7 @@
 	<!-------------------------------------- Account Panel End --------------------------------->
 	<!-------------------------------------- Academic Panel Start --------------------------------->
 	<section class="col-lg-12 ">
-         <div <div class="box box-success" >
+         <div class="box box-success" >
 			<div class="box-header with-border">
 				<h3 class="box-title" style="color:teal;"><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Academic</b></h3>
 			</div>
@@ -218,7 +218,7 @@
 	<!-------------------------------------- Academic Panel End --------------------------------->
 	 <!-------------------------------------- Services Panel Start --------------------------------->
 	<section class="col-lg-12 ">
-        <div <div class="box box-success" >
+        <div class="box box-success" >
             <div class="box-header with-border">
 				 <h3 class="box-title" style="color:teal;"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;&nbsp;<b>Services</b></h3>
 		    </div>

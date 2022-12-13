@@ -1,3 +1,6 @@
+@include('common.header');
+@include('common.navbar');
+
 <script>
 function valid(s_no){   
 var myval=confirm("Are you sure want to delete this record !!!!");
@@ -415,7 +418,7 @@ $("#student_class_group").html('');
       <!-- /.row -->
     </section>
     <!-- /.content -->
- 
+	@include('common.footer');
 
 <script>
   $(function (){

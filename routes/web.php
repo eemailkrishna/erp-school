@@ -62,7 +62,25 @@ Route::get('/staff',[StaffController::class,'staff'])->name('staff');
 
 // student routes
 Route::get('/student',[StudentController::class,'student'])->name('student');
-
+Route::get('/student/student_registration',[StudentController::class,'registration'])->name('registration');
+Route::get('/student/student_registration_list_fatch',[StudentController::class,'registration_list'])->name('registration_list');
+Route::get('/student/student_admission_list',[StudentController::class,'admission_list'])->name('admission_list');
+Route::get('/student/student_profile_update',[StudentController::class,'student_profile'])->name('student_profile');
+Route::get('/student/student_mapping_data_update',[StudentController::class,'student_mapping'])->name('student_mapping');
+Route::get('/student/student_photo_update',[StudentController::class,'student_photo'])->name('student_photo');
+Route::get('/student/student_sms_contact_update',[StudentController::class,'student_sms'])->name('student_sms');
+Route::get('/student/student_sms_notification_update',[StudentController::class,'student_sms_notification'])->name('student_sms_notification');
+Route::get('/student/rfid_card_generate',[StudentController::class,'student_rfd'])->name('student_rfd');
+Route::get('/student/student_roll_no',[StudentController::class,'student_roll_no'])->name('student_roll_no');
+Route::get('/student/student_id_card',[StudentController::class,'student_id_card'])->name('student_id_card');
+Route::get('/student/mother_student_id_card',[StudentController::class,'mother_student_id_card'])->name('mother_student_id_card');
+Route::get('/student/father_student_id_card',[StudentController::class,'father_student_id_card'])->name('father_student_id_card');
+Route::get('/student/guardian_student_id_card',[StudentController::class,'guardian_student_id_card'])->name('guardian_student_id_card');
+Route::get('/student/health_zone',[StudentController::class,'health_zone'])->name('health_zone');
+Route::get('/student/physical_fitness',[StudentController::class,'physical_fitness'])->name('physical_fitness');
+Route::get('/student/report_student_strength_castewise',[StudentController::class,'student_strength'])->name('student_strength');
+Route::get('/student/report_student_strength_religionwise',[StudentController::class,'student_strength_religion'])->name('student_strength_religion');
+Route::get('/student/student_registration_report',[StudentController::class,'student_registration_rep'])->name('student_registration_rep');
 // Account Routes
 Route::get('/account',[AccountController::class,'account'])->name('account');
 

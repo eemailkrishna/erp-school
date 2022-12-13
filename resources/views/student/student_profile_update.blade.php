@@ -1,61 +1,34 @@
-<script type="text/javascript">
-function for_section(value){
-      $('#student_class_section').html("<option value='' >Loading....</option>"); 
-$.ajax({
-type: "POST",
-url: access_link+"student/ajax_class_section_all.php?class_name="+value+"",
-cache: false,
-success: function(detail){
-$("#student_class_section").html(detail);
-for_stream(value);
-}
-});
-}
-
-function for_stream(value2){
-if(value2=="11TH" || value2=="12TH"){
-$("#student_class_stream_div").show();
-$("#student_class_group_div").show();
-}else{
-$("#student_class_stream_div").hide();
-$("#student_class_group_div").hide();
-}
-$("#student_class_stream").val('All');
-$("#student_class_group").val('All');
-for_search11();
-}
-
-function get_group(value1){
-if(value1!='All'){
-$('#student_class_group').html("<option value='' >Loading....</option>"); 
+@include('common.header');
+@include('common.navbar');
+  <script type="text/javascript">
+   function for_section(value){
+  $('#student_class_section').html("<option value='' >Loading....</option>"); 
        $.ajax({
 			  type: "POST",
-              url: access_link+"student/ajax_stream_group_all.php?stream_name="+value1+"",
+              url:  access_link+"student/ajax_class_section_all.php?class_name="+value+"",
               cache: false,
-              success: function(detail1){
-                  $("#student_class_group").html(detail1);
+              success: function($detail){
+                   var str =$detail;                
+                 
+                  $("#student_class_section").html(str);
+				  for_search11();
+				  
               }
            });
-}else{
-$("#student_class_group").html("<option value='All'>All</option>");
-}
-for_search11();
-}
+
+    }
 
 function for_search11(){
-
 var student_class=document.getElementById('student_class').value;
-var student_class_stream=document.getElementById('student_class_stream').value;
-var student_class_group=document.getElementById('student_class_group').value;
 var student_class_section=document.getElementById('student_class_section').value;
+var student_class_stream=document.getElementById('student_class_stream').value;
+var student_fee_category_code=document.getElementById('student_fee_category_code').value;
 var student_limit=document.getElementById('student_limit').value;
-var student_order_by=document.getElementById('student_order_by').value;
-
 if(student_class!='' || student_class_section!=''){
-   $("#for_student_list").html(loader_div);
+$('#for_student_list').html(loader_div);
 $.ajax({
 type: "POST",
-url: access_link+"student/ajax_student_photo_update.php?student_class="+student_class+"&student_class_stream="+student_class_stream+"&student_class_group="+student_class_group+"&student_class_section="+student_class_section+"&student_limit="+student_limit+"&student_order_by="+student_order_by+"",
+url: access_link+"student/ajax_student_profile_update.php?student_class="+student_class+"&student_class_section="+student_class_section+"&student_class_stream="+student_class_stream+"&student_fee_category_code="+student_fee_category_code+"&student_limit="+student_limit+"",
 success: function(detail){
 $('#for_student_list').html(detail);
   }
@@ -92,14 +65,64 @@ $('#for_student_list').html('');
 	return false;
 	}
    }
-      	      $("#my_form").submit(function(e){
+   
+function for_route(ser_no){
+    var student_bus=document.getElementById('student_bus_'+ser_no).value;
+    $('#student_bus_route_'+ser_no).html("<option value=''>Loading.....</option>");
+    if(student_bus=='Yes'){
+        $.ajax({
+        type: "POST",
+        url: access_link+"student/ajax_get_student_bus_route_list.php",
+        success: function(detail){
+        $('#student_bus_route_'+ser_no).html(detail);
+        }
+        });
+    }else{
+        $("#student_bus_route_"+ser_no).html("<option value=''>Select</option>");
+    }
+}
+
+function for_stop(ser_no){
+    var student_bus_route=document.getElementById('student_bus_route_'+ser_no).value;
+    $('#bus_fee_category_name_'+ser_no).html("<option value=''>Loading.....</option>");
+    if(student_bus_route!=''){
+        $.ajax({
+        type: "POST",
+        url: access_link+"student/ajax_get_student_bus_stop_list.php",
+        success: function(detail){
+        $('#bus_fee_category_name_'+ser_no).html(detail);
+        }
+        });
+    }else{
+        $("#bus_fee_category_name_"+ser_no).html("<option value=''>Select</option>");
+    }
+}
+
+function for_no(ser_no){
+    var student_bus_route=document.getElementById('student_bus_route_'+ser_no).value;
+    var bus_fee_category_name=document.getElementById('bus_fee_category_name_'+ser_no).value;
+    if(student_bus_route!='' && bus_fee_category_name!=''){
+        var category_name=bus_fee_category_name.split('|?|');
+        $.ajax({
+        type: "POST",
+        url: access_link+"student/ajax_get_student_bus_no_list.php?stop_name="+category_name[0]+"&student_bus_route="+student_bus_route+"",
+        success: function(detail){
+        $('#student_bus_no_'+ser_no).val(detail);
+        }
+        });
+    }else{
+        $("#student_bus_no_"+ser_no).val("");
+    }
+}
+   
+   	      $("#my_form").submit(function(e){
         e.preventDefault();
 
     var formdata = new FormData(this);
  window.scrollTo(0, 0);
      $("#get_content").html(loader_div);
         $.ajax({
-            url: access_link+"student/student_photo_update_api.php",
+            url: access_link+"student/student_profile_update_api.php",
             type: "POST",
             data: formdata,
             mimeTypes:"multipart/form-data",
@@ -107,23 +130,29 @@ $('#for_student_list').html('');
             cache: false,
             processData: false,
             success: function(detail){
+			
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
-				   get_content('student/student_photo_update');
+				   alert_new('Successfully Complete',"green");
+				   get_content('student/student_profile_update');
             }
 			}
          });
       });
-</script>
+	</script>
+
+  
+  
   
  <form role="form"  method="post" enctype="multipart/form-data" id="my_form">
+
     <section class="content-header">
       <h1>
-        Student Photo Update
+        Student Profile Update
 		<small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-     		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
 	  <li><a href="javascript:get_content('student/students')"><i class="fa fa-graduation-cap"></i> Student</a></li>
         <li class="active">Student Profile Update</li>
       </ol>
@@ -174,30 +203,47 @@ $('#for_student_list').html('');
                             					    </select>
 				</div>
 				
-				<div class="col-md-3 " id="student_class_stream_div" style="display:none;">
-					    <label >Stream</label>
-					    <select class="form-control" name="student_class_stream" id="student_class_stream" onchange="get_group(this.value);" >
+				<div class="col-md-3">				
+					<div class="form-group">
+					  <label>Class Stream</label>
+					    <select class="form-control select2" name="" id="student_class_stream" style="width:100%;" onchange="for_search11();">
 					           <option value="All">All</option>
-						       						       <option value="SCIENCE">SCIENCE</option>
-					           						       <option value="ARTS">ARTS</option>
-					           						       <option value="Commerce ">Commerce </option>
-					           					    </select>
-				</div>
-				<div class="col-md-3 " id="student_class_group_div" style="display:none;">
-					  <label >Group</label>
-					    <select class="form-control" name="student_class_group" id="student_class_group" onchange='for_search11();' >
-						<option value="All">All</option>
-					    </select>
+						       								<option value="SCIENCE">SCIENCE</option>
+																<option value="ARTS">ARTS</option>
+																<option value="Commerce ">Commerce </option>
+													    </select>
+					</div>
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-md-2">
 				<label>Section</label>
 				<select name="student_class_section" id="student_class_section" style="width:100%;" class="form-control" onchange="for_search11();">
-				<option value="">Select Section</option>
+				<option value="">Select</option>
 				</select>
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-md-2">
+                    <div class="form-group">
+                        <label>Fee Category</label>
+                        <select class="form-control" name="student_fee_category_code" id="student_fee_category_code" onchange="for_search11();">
+                        <option value="All">All</option></option>
+                                                
+                        <option value="category1">Non- RTE</option>
+                                                
+                        <option value="category2">New </option>
+                                                
+                        <option value="category3">Oid </option>
+                                                
+                        <option value="category4">Science</option>
+                                                
+                        <option value="category5">RTE</option>
+                                                
+                        <option value="category6">sibling</option>
+                                                </select>
+                    </div>
+                </div>
+				
+				<div class="col-md-2">
 				<label>Limit</label>
 				<select name="student_limit" id="student_limit" class="form-control" onchange="for_search11();">
 				<option value="0">0-20</option>
@@ -210,17 +256,10 @@ $('#for_student_list').html('');
 				<option value="140">140-160</option>
 				<option value="160">160-180</option>
 				<option value="180">180-200</option>
-				</select>
-				</div>
-				
-				<div class="col-md-3">
-				<label>Order By</label>
-				<select name="student_order_by" id="student_order_by" class="form-control" onchange="for_search11();">
-				<option value="">Select</option>
-				<option value=" ORDER BY student_name">Student Name</option>
-				<option value=" ORDER BY CAST(school_roll_no AS UNSIGNED)">Roll No.</option>
-				<option value=" ORDER BY CAST(student_admission_number AS UNSIGNED)">Admission No.</option>
-				<option value=" ORDER BY CAST(student_scholar_number AS UNSIGNED)">Scholar No.</option>
+				<option value="200">200-220</option>
+				<option value="220">220-240</option>
+				<option value="240">240-260</option>
+				<option value="260">260-280</option>
 				</select>
 				</div>
 				
@@ -229,16 +268,25 @@ $('#for_student_list').html('');
 			  </div>
 			  </div>
 			  <div class="col-md-1"></div>
+
         </div>
         <!-- /.col -->
       </div>
-		<div id="for_student_list" class="table-responsive">
-             
-            </div>
-				</div>
+		  <div id="for_student_list" class="table-responsive">
+
+  </div>
+			</div>
 <!---------------------------------------------End Registration form--------------------------------------------------------->
 		  <!-- /.box-body -->
            </div>
      </div>
      </section>
- </form>
+  </form>
+  @include('common.footer');
+  <script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>

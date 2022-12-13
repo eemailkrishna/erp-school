@@ -1,9 +1,11 @@
+@include('common.header');
+@include('common.navbar');
   <script type="text/javascript">
    function for_section(value){
-  $('#student_class_section').html("<option value='' >Loading....</option>"); 
+ $('#student_class_section').html("<option value='' >Loading....</option>"); 
        $.ajax({
 			  type: "POST",
-              url: access_link+"student/ajax_class_section_all.php?class_name="+value+"",
+              url: access_link+"student/ajax_class_section.php?class_name="+value+"",
               cache: false,
               success: function($detail){
                    var str =$detail;                
@@ -21,10 +23,10 @@ var student_class=document.getElementById('student_class').value;
 var student_class_section=document.getElementById('student_class_section').value;
 var student_limit=document.getElementById('student_limit').value;
 if(student_class!='' || student_class_section!=''){
-$("#for_student_list").html(loader_div);
+$('#for_student_list').html(loader_div);
 $.ajax({
 type: "POST",
-url: access_link+"student/ajax_student_mapping_data_update.php?student_class="+student_class+"&student_class_section="+student_class_section+"&student_limit="+student_limit+"",
+url: access_link+"student/ajax_student_sms_contact_update.php?student_class="+student_class+"&student_class_section="+student_class_section+"&student_limit="+student_limit+"",
 success: function(detail){
 $('#for_student_list').html(detail);
   }
@@ -61,14 +63,18 @@ $('#for_student_list').html('');
 	return false;
 	}
    }
+   
+   function set_contact(value,student_roll_no){
+   $('#sms_contact_'+student_roll_no).val(value);
+   }
       	      $("#my_form").submit(function(e){
         e.preventDefault();
-
-    var formdata = new FormData(this);
  window.scrollTo(0, 0);
      $("#get_content").html(loader_div);
+    var formdata = new FormData(this);
+
         $.ajax({
-            url: access_link+"student/student_mapping_data_update_api.php",
+            url: access_link+"student/student_sms_contact_update_api.php",
             type: "POST",
             data: formdata,
             mimeTypes:"multipart/form-data",
@@ -80,27 +86,23 @@ $('#for_student_list').html('');
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
 				   alert_new('Successfully Complete',"green");
-				   get_content('student/student_mapping_data_update');
+				   get_content('student/student_sms_contact_update');
             }
 			}
          });
       });
-	</script>
+</script>
 
-  
-  
-  
  <form role="form"  method="post" enctype="multipart/form-data" id="my_form">
- 
     <section class="content-header">
       <h1>
-        Student Profile Update
+        Student SMS Contact Update
 		<small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-      		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
+     		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
 	  <li><a href="javascript:get_content('student/students')"><i class="fa fa-graduation-cap"></i> Student</a></li>
-        <li class="active">Student Profile Update</li>
+        <li class="active">Student SMS Contact Update</li>
       </ol>
     </section>
 	<!---*****************************************************************************************************************************************************************************************************************************************************-->
@@ -171,28 +173,20 @@ $('#for_student_list').html('');
 				</select>
 				</div>
 				
-				
 			  </div>
 			  </div>
 			  </div>
 			  </div>
 			  <div class="col-md-2"></div>
-  <div id="for_student_list">
-
+  
+  <div class="col-md-12" id="for_student_list">
+  
   </div>
+  
         </div>
         <!-- /.col -->
       </div>
 			
-			<div class="col-md-12">
-			<div class="col-md-12">						
-			  <div class="box-body table-responsive">
-             
-            </div>
-				</div>
-				
-				
-		</div>
 			</div>
 <!---------------------------------------------End Registration form--------------------------------------------------------->
 		  <!-- /.box-body -->
@@ -200,5 +194,8 @@ $('#for_student_list').html('');
      </div>
      </section>
 
+    
+    
   </form>	
+  @include('common.footer');
 	
