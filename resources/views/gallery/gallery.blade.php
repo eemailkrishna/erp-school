@@ -84,7 +84,7 @@ body {
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
-			  <a href="javascript:get_content('gallery/image_upload_frame')"><button type="button" class="btn btn-success"  style="float:right;" >
+			  <a href="{{url('/gallery-addNewGallery')}}"><button type="button" class="btn btn-success"  style="float:right;" >
                 + Add New Gallery</button></a>
 	<button type="button" style='display:none' id="new_button" data-toggle="modal" data-target="#modal-default">
                </button>

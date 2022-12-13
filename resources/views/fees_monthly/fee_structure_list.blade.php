@@ -1,6 +1,11 @@
+<<<<<<< HEAD
    @include('common.header')
    @include('common.navbar')
    <!-- Content Header (Page header) -->
+=======
+@include('common.header')
+	<!-- Content Header (Page header) -->
+>>>>>>> f5e753aa3c731a5d4b7eb3085852e48f18388293
   <section class="content-header">
       <h1>
         Fees Management        <small>Control Panel</small>
@@ -337,4 +342,8 @@ $('#example1').DataTable()
 })
 
 </script>
+<<<<<<< HEAD
 @include('common.footer')
+=======
+@include('common.footer')
+>>>>>>> f5e753aa3c731a5d4b7eb3085852e48f18388293

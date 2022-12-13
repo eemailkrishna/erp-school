@@ -15,14 +15,14 @@ window.scrollTo(0, 0);
     </section>
     <!-- Main content -->
     <section class="content">
-	  <div <div class="box box-success" >
+	   <div class="box box-success" >
 		<div class="box-header with-border">
 
 		<h3 class="box-title" style="color:teal;"><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Main Panel</b></h3>
 		</div>
 		<div class="box-body">
 
-	   	  <a href="javascript:get_content('user_right/add_user')">
+	   	  <a href="{{'/userRightAddUser'}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#E32636;">
             <div class="inner"><br>
@@ -32,11 +32,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('user_right/add_user')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{'/userRightAddUser'}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-	   	 <a href="javascript:get_content('user_right/user_list')">
+	   	 <a href="{{url('/userRightUserList')}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#3B7A57;">
             <div class="inner"><br>
@@ -46,7 +46,7 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('user_right/user_list')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/userRightUserList')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
