@@ -19,7 +19,7 @@ window.scrollTo(0, 0);
 		<h3 class="box-title" style="color:teal;"><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Main Panel</b></h3>
 		</div>
 		<div class="box-body">
-			 	  <a href="javascript:get_content('complaint/student_complaint')">
+			 	  <a href="{{url('/complaint-studentComplaint')}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#E32636;">
             <div class="inner"><br>
@@ -30,7 +30,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-		 	  <a href="javascript:get_content('complaint/staff_complaint')">
+		 	  <a href="{{url('/complaint-staffFeedback')}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#3B7A57;">
             <div class="inner"><br>
@@ -41,7 +41,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-	 <a href="javascript:get_content('complaint/faculty_complaint')">
+	 <a href="{{url('/complaint-employeeComplaints')}}">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box" style="background-color:#7a7b7b;">
             <div class="inner"><br>
