@@ -1,3 +1,5 @@
+@include('common.header')
+@include('common.navbar')
 <script>
 function for_print()
  {
@@ -14,7 +16,7 @@ function for_print()
       </h1>
 	            <ol class="breadcrumb">
 		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
-		<li><a href="javascript:get_content('dues/dues')"><i class="fa fa-info-circle"></i>Dues Details</a></li>
+		<li><a href="{{url('/dues-duesNursery-details')}}"><i class="fa fa-info-circle"></i>Dues Details</a></li>
         <li class="active">NURSERYClass Details</li>
         </ol>
     </section>
@@ -69,7 +71,7 @@ function for_print()
                   <td style="text-align:center;">48000</td>
                   <td style="text-align:center;">48000</td>
                   <td style="text-align:center;">0</td>               
-                  <td><button type="button" onclick="post_content('fees_monthly/student_fee_list_particular','student_roll_no=2200770')" class="btn btn-primary">Details</button></td>
+                  <td><a href="{{url('/duesNurseryDetails')}}"><button type="button" onclick="post_content('fees_monthly/student_fee_list_particular','student_roll_no=2200770')" class="btn btn-primary">Details</button></a></td>
                 </tr>
                 
                 <tr>
@@ -275,3 +277,4 @@ function exportTableToExcel(tableID, filename = ''){
   })
  
 </script>
+@include('common.footer')

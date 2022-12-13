@@ -1,4 +1,5 @@
-
+@include('common.header')
+@include('common.navbar')
     <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
@@ -97,3 +98,4 @@ $(function () {
 $('#example1').DataTable()
 })
 </script>
+@include('common.footer')

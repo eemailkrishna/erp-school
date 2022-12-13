@@ -1,9 +1,11 @@
+  @include('common.header')
+  @include('common.navbar')
    <script>
    function for_section(value){
        $("#student_class_section").html("<option value=''>Loading.....</option>");
        $.ajax({
 			  type: "POST",
-              url: access_link+"govt_requirement/ajax_section.php?class_name="+value+"",
+              url: access_link+"govt_requirement/ajax_class_section.php?class_name="+value+"",
               cache: false,
               success: function(detail){
                   $("#student_class_section").html(detail);
@@ -11,10 +13,11 @@
            });
    }
    
-   	    function form_submit(){
+   function form_submit(){
+
 		    $.ajax({
            type: "POST",
-            url: access_link+"govt_requirement/mapping_list_downloads.php",
+            url: access_link+"govt_requirement/student_contact_list_downloads.php",
            data: $("#my_form1").serialize(), 
            success: function(data1)
            {
@@ -25,6 +28,7 @@
          });
       }
    </script>
+
 
     <section class="content-header">
       <h1>
@@ -48,13 +52,13 @@
 	       <!-- general form elements disabled -->
           <div class="box box-primary my_border_top">
             <div class="box-header with-border ">
-              <h3 class="box-title">Mapping List</h3>
+              <h3 class="box-title">Contact List</h3>
             </div>
             <!-- /.box-header -->
 <!------------------------------------------------Start Registration form--------------------------------------------------->
 			
             <div class="box-body">
-			<form role="form" method="post" enctype="multipart/form-data" id="my_form1">
+			<form role="form" method="post" id="my_form1" enctype="multipart/form-data">
 			<div class="col-md-12">
 		 	
 			         <div class="col-md-2">
@@ -62,7 +66,7 @@
 				   <div class="col-md-8">
                     <div class="col-md-6">				   
 			      <div class="form-group" >
-				  <th><b style="font-size:15px">Choose Class</b></th>
+				  <th><b   style="font-size:15px">Choose Class</b></th>
 				<select name="std_class" class="form-control new_student" id="std_class" onchange="for_section(this.value);" >
 				<option value="All">All</option>
 								<option value="NURSERY">NURSERY</option>
@@ -109,119 +113,57 @@
 					
 				 <div class="col-md-2">				
 			      <div class="form-group" >
-				<input type="checkbox" checked name="student_data[]" value="student_admission_number|?|Admission No" class="check_all"><th><b>Admission No.</b></th>
+				<input type="checkbox" checked name="student_data[]" value="student_name|?|Student Name" class="check_all"><th><b>Student Name</b></th>
 				  </div>
 				  </div>
 	
 				  <div class="col-md-2 ">	
 					 <div class="form-group" >
-					 <input type="checkbox" checked name="student_data[]" value="student_date_of_admission|?|Admission Date" class="check_all"><th><b>Admission Date</b></th>
+					 <input type="checkbox" checked name="student_data[]" value="student_father_name|?|Student Father Name" class="check_all"><th><b>Student Father Name</b></th>
 					 </div>
 				  </div>
 			      <div class="col-md-2 ">
 						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_name|?|student name" class="check_all"><th><b>Student's Name</b></th>
+						   <input type="checkbox" checked name="student_data[]" value="student_class|?|Student Class" class="check_all"><th><b>Student Class</b></th>
 						</div>
 				   </div>
 				   <div class="col-md-2 ">
 						<div class="form-group">
-						 <input type="checkbox" checked name="student_data[]" value="student_father_name|?|student father name" class="check_all"><th><b>Father's Name</b></th>
-						</div>
-					</div>
-					
-					<div class="col-md-2 ">
-						<div class="form-group">
-						 <input type="checkbox" checked name="student_data[]" value="student_mother_name|?|student mother name" class="check_all"><th><b>Mother's Name</b></th>
+						 <input type="checkbox" checked name="student_data[]" value="student_class_section|?|Student Class Section" class="check_all"><th><b>Student Class Section</b></th>
 						</div>
 					</div>
 					
 					<div class="col-md-2 ">		
 						<div class="form-group">
-						 <input type="checkbox" checked name="student_data[]" value="student_gender|?|Gender" class="check_all"><th><b>Gender</b></th>
+						 <input type="checkbox" checked name="student_data[]" value="student_contact_number|?|Student Contact Number" class="check_all"><th><b>Student Contact Number</b></th>
 						</div>
 					</div>
 					<div class="col-md-2 ">	
 					<div class="form-group" >
-					  <input type="checkbox" checked name="student_data[]" value="student_category|?|Student Category" class="check_all"><th><b>Category(Cast)</b></th>
-					</div>
-				    </div>
-				    <div class="col-md-2 ">	
-					<div class="form-group" >
-					  <input type="checkbox" checked name="student_data[]" value="student_caste|?|Student Caste" class="check_all"><th><b>student Cast</b></th>
+					  <input type="checkbox" checked name="student_data[]" value="student_father_contact_number|?|Student Father Contact Number" class="check_all"><th><b>Student Father Contact Number1</b></th>
 					</div>
 				    </div>
 					<div class="col-md-2 ">		
 						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_child_id|?|Student Child Id" class="check_all"><th><b>Child Id</b></th>
+						   <input type="checkbox" checked name="student_data[]" value="student_father_contact_number2|?|Student Father Contact Number2" class="check_all"><th><b>Student Father Contact Number2</b></th>
 						</div>
 					</div>
 					<div class="col-md-2 ">		
 						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_bank_name|?|Student Bank Name" class="check_all"><th><b>Bank Name Student</b></th>
+						   <input type="checkbox" checked name="student_data[]" value="student_mother_contact_number|?|Student Mother Contact Number" class="check_all"><th><b>Student Mother Contact Number</b></th>
 						</div>
 					</div>
 					<div class="col-md-2 ">		
 						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_account_number|?|Student Account Number" class="check_all"><th><b>Account No. Student</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_bank_ifsc_code|?|IFSC Code" class="check_all"><th><b>Ifsc Student</b></th>
+						   <input type="checkbox" checked name="student_data[]" value="student_guardian_contact_number|?|Student Guardian Contact Number" class="check_all"><th><b>Student Guardian Contact Number</b></th>
 						</div>
 					</div>
 					
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_adhar_number|?|Student Adhar Number" class="check_all"><th><b>Student Adhar No.</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked  name="student_data[]" value="student_father_adhar_card_number|?|Father Adhar No" class="check_all"><th><b>Father Adhar No.</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_family_id|?|Family Id" class="check_all"><th><b>Family Id</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_sssmid_number|?|SSSM ID" class="check_all"><th><b>SSSM ID</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_father_bank_name|?|Bank Name Father" class="check_all"><th><b>Bank Name Father</b></th>
-						</div>
-					</div>
-					<div class="col-md-2 ">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_father_bank_account_number|?|Account No. Father" class="check_all"><th><b>Account No. Father</b></th>
-						</div>
-					</div>
-					<div class="col-md-2">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_father_bank_ifsc_code|?|Ifsc Father" class="check_all"><th><b>Ifsc Father</b></th>
-						</div>
-					</div>
-					<div class="col-md-2">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_date_of_birth|?|Student Date of Birth" class="check_all"><th><b>Student Date of Birth</b></th>
-						</div>
-					</div>
-					
-					<div class="col-md-2">		
-						<div class="form-group">
-						   <input type="checkbox" checked name="student_data[]" value="student_father_contact_number|?|Student Father Contact Number" class="check_all"><th><b>Contact Number</b></th>
-						</div>
-					</div>
 					</div>
 					</div>
 					<br><br>
 					<div class="col-md-12">
-		   <center><input type="button" name="submit" value="Submit" class="btn btn-primary" onclick="return for_validity();" /></center>
+		   <center><input type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return for_validity();" /></center>
 		          </div>
 		
 		   </form>	
@@ -233,7 +175,7 @@
 
 </section>
     
- 
+
  <script>
 function for_check(id){
 if($('#'+id).prop("checked") == true){
@@ -257,10 +199,9 @@ if(num2<1){
 alert_new('Please Select Atleast One Field !!!','red');
 return false;
 }else{
-    	form_submit();
+form_submit();
 return true;
 }
 }
 </script>
-</body>
-</html>
+@include('common.footer')

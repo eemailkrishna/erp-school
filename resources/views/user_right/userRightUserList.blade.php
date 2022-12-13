@@ -1,4 +1,6 @@
  
+@include('common.header')
+@include('common.navbar')
 <script>
 function valid(s_no){   
 var myval=confirm("Are you sure want to delete this record !!!!");
@@ -78,7 +80,7 @@ success: function(detail){
                   <td>9630843846</td>
                   <td>Teacher</td>
                   <td></td>
-				  <td><button type="button"  onclick="post_content('user_right/add_user','user_email=rashisaxena1997@gmail.com')" class="btn btn-success" >Edit</button></td><td>
+				  <td><a href="{{url('/userRightAdduserEdit')}}"><button type="button"  onclick="post_content('user_right/add_user','user_email=rashisaxena1997@gmail.com')" class="btn btn-success" >Edit</button></a></td><td>
 			<button type="button"  class="btn btn-danger" onclick="return valid('155');" >Delete</button></td>
 				 
                   
@@ -1234,4 +1236,4 @@ success: function(detail){
    
   })
 </script>
-
+@include('common.footer')

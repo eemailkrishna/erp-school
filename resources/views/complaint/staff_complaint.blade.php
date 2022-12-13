@@ -1,3 +1,5 @@
+@include('common.header')
+@include('common.navbar')
 <script>
     $("#my_form").submit(function(e){
         e.preventDefault();
@@ -946,3 +948,4 @@ ye konsa nam hota h</th>
 	}
 	
 </script>
+@include('common.footer')

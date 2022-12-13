@@ -1,4 +1,5 @@
-
+@include('common.header')
+@include('common.navbar')
 <script>
     $("#my_form").submit(function(e){
         e.preventDefault();
@@ -4360,3 +4361,4 @@ right</th>
 	document.getElementById("reply_roll_no").value=roll_no;
 	}
 </script>
+@include('common.footer')

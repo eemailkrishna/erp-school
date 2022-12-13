@@ -1,5 +1,5 @@
-@include('common.header');
-@include('common.navbar');
+@include('common.header')
+@include('common.navbar')
 <script>
 window.scrollTo(0, 0);
 </script>
@@ -23,7 +23,7 @@ window.scrollTo(0, 0);
 		<div class="box-body">
 
 
-	  <a href="javascript:post_content('dues/class_wise_dues_details','class_name=NURSERY')">
+	  <a href="{{url('/duesNursery')}}">
         <div class="col-lg-3 col-xs-6">
             <div class="small-box" style="background-color:#E32636;">
              <div class="inner"><br>
@@ -31,7 +31,7 @@ window.scrollTo(0, 0);
 				<p style="margin-left:10px;color:#fff;">Enter</p>
              </div>
 
-             <a href="javascript:post_content('dues/class_wise_dues_details','class_name=NURSERY')" class="small-box-footer">More Info<i class="fa fa-arrow-circle-right"></i>
+             <a href="{{url('/duesNursery')}}" class="small-box-footer">More Info<i class="fa fa-arrow-circle-right"></i>
 	         </a>
             </div>
         </div>
@@ -282,4 +282,4 @@ window.scrollTo(0, 0);
       </div>
 
     </section>
-@include('common.footer');
+@include('common.footer')

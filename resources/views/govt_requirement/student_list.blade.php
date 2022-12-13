@@ -1,4 +1,5 @@
-  
+@include('common.header')
+@include('common.navbar')  
   	<script type="text/javascript">
    function for_section(value){
        $("#student_class_section1").html("<option value=''>Loading.....</option>");
@@ -267,3 +268,4 @@ document.getElementById('filter_type').value=value;
           </div>
     </div>
 </section>
+@include('common.footer')

@@ -22,7 +22,7 @@ window.scrollTo(0, 0);
 		</div>
 		<div class="box-body">
 
-		   <a href="javascript:get_content('govt_requirement/mapping_list')">
+		   <a href="{{url('/govt-require-mappingList')}}">
 						<div class="col-md-3 col-md-6">
 						  <div class="small-box" style="background-color:#E32636;">
 							<div class="inner"><br>
@@ -32,12 +32,12 @@ window.scrollTo(0, 0);
 							<div class="icon">
 							  <i class="ion"></i>
 							</div>
-							<a href="javascript:get_content('govt_requirement/mapping_list')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="{{url('/govt-require-mappingList')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
 						  </div>
 						</div>
 		            </a>
 
-		<a href="javascript:get_content('govt_requirement/student_list')">
+		<a href="{{url('/govt_require_studentList')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#3B7A57;">
             <div class="inner"><br>
@@ -47,11 +47,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('govt_requirement/student_list')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/govt_require_studentList')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-	 		 <a href="javascript:get_content('govt_requirement/student_contact_list')">
+	 		 <a href="{{url('/govt_require_contactNo')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#9F2B68;">
             <div class="inner"><br>
@@ -61,7 +61,7 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('govt_requirement/student_contact_list')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/govt_require_contactNo')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>

@@ -1,4 +1,5 @@
-
+@include('common.header')
+@include('common.navbar')
 <script>
 function total_fee(){
 var add = 0;
@@ -182,3 +183,4 @@ document.getElementById('total_paid').value = add;
   </div>
 </div>
 </section>
+@include('common.footer')

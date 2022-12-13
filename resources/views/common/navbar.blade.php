@@ -218,15 +218,15 @@ display:block;
 		 	<li><a href="{{url('sms')}}"><i class="fa fa-envelope"></i> <span>SMS Services</span></a></li>
 		 	<li><a href="{{url('time-table')}}"><i class="fa fa-table"></i> <span>Time Table</span></a></li>
 		 	<li><a href="{{url('event')}}"><i class="fa fa-calendar"></i> <span>Event</span></a></li>
-		 	<li><a href="javascript:get_content('holiday/holiday')"><i class="fa fa-external-link"></i> <span>Holiday</span></a></li>
-		 	<li><a href="javascript:get_content('leave/leave')"><i class="fa fa-pagelines"></i> <span>Leave</span></a></li>
+		 	<li><a href="{{url('/holiday')}}"><i class="fa fa-external-link"></i> <span>Holiday</span></a></li>
+		 	<li><a href="{{url('/leave')}}"><i class="fa fa-pagelines"></i> <span>Leave</span></a></li>
 		 	<li><a href="{{url('sports')}}"><i class="fa fa-futbol-o"></i> <span>Sports </span></a></li>
 		 	<li><a href="{{url('download')}}"><i class="fa fa-download"></i> <span>Downloads</span></a></li>
 		 	<li><a href="{{url('recycle-bin')}}"><i class="fa fa-bell-o"></i> <span>Recycle bin</span></a></li>
 		 	<li><a href="{{url('/session')}}"><i class="fa fa-building-o"></i> <span>Session</span></a></li>
 		 	<li><a href="{{url('reminder')}}"><i class="fa fa-bell-o"></i> <span>Reminder</span></a></li>
 		 	<li><a href="{{url('govt-requirement')}}"><i class="fa fa-circle-o"></i> <span>Govt. Requir.</span></a></li>
-		 	<li><a href="javascript:get_content('school_info/school_info')"><i class="fa fa-user"></i> <span>School Info</span></a></li>
+		 	<li><a href="{{url('/school-info')}}"><i class="fa fa-user"></i> <span>School Info</span></a></li>
 		 	<li><a href="javascript:get_content('utility/utilities')"><i class="fa fa-bell-o"></i> <span>Typing Tool</span></a></li>
 		 	<li><a href="javascript:get_content('bus/bus')"><i class="fa fa-bus"></i> <span>Bus</span></a></li>
 		 	<li><a href="{{url('hostel')}}"><i class="fa fa-hotel"></i> <span>Hostel</span></a></li>

@@ -1,3 +1,5 @@
+@include('common.header')
+@include('common.navbar')
 <script>
 function check_all_class1(){
   if($('#id_class_check').prop('checked')) {
@@ -2905,3 +2907,4 @@ window.scrollTo(0, 0);
 
   })
 </script>
+@include('common.footer')

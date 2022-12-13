@@ -1,4 +1,5 @@
-    <!-- Content Header (Page header) -->
+@include('common.header')
+	<!-- Content Header (Page header) -->
   <section class="content-header">
       <h1>
         Fees Management        <small>Control Panel</small>
@@ -335,3 +336,4 @@ $('#example1').DataTable()
 })
 
 </script>
+@include('common.footer')

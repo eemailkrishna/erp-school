@@ -33,6 +33,11 @@ use App\Http\Controllers\UserRightController;
 use App\http\Controllers\SmartClassController;
 use App\Http\Controllers\VideoLectureController;
 use App\Http\Controllers\VideoLectureAddController;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\SchoolInfoController;
+use App\Http\Controllers\HolidayController;
+
+
 
 
 
@@ -68,6 +73,8 @@ Route::get('/account',[AccountController::class,'account'])->name('account');
 
 // Dues Routes
 Route::get('/dues',[DuesController::class,'dues'])->name('account');
+route::get('/duesNursery',[DuesController::class,'duesNursery'])->name('duesNursery');
+route::get('/duesNurseryDetails',[DuesController::class,'duesNurseryDetails'])->name('duesNurseryDetails');
 
 // Fees routes
 Route::get('/fees',[FeesController::class,'fees'])->name('account');
@@ -92,9 +99,16 @@ Route::get('/set-paper',[SetPaperController::class,'SetPaper'])->name('set-paper
 
 // complaint route
 Route::get('/complaint',[ComplaintController::class,'complaint'])->name('complaint');
+Route::get('/complaint-studentComplaint',[ComplaintController::class,'complaint_studentComplaint'])->name('complaint-studentComplaint');
+
+Route::get('/complaint-staffFeedback',[ComplaintController::class,'complaint_staffFeedback'])->name('complaint_staffFeedback');
+
+Route::get('/complaint-employeeComplaints',[ComplaintController::class,'complaint_employeeComplaints'])->name('complaint-employeeComplaints');
+
 
 // gallary route
 Route::get('/gallery',[GallaryController::class,'gallery'])->name('gallery');
+Route::get('/gallery-addNewGallery',[GallaryController::class,'galleryAddNewGallery'])->name('galleryAddNewGallery');
 
 // sms  routes
 Route::get('/sms',[SmsController::class,'sms'])->name('sms');
@@ -124,6 +138,11 @@ Route::get('/reminder',[ReminderCotroller::class,'reminder'])->name('reminder');
 
 //  govt routes
 Route::get('/govt-requirement',[GovRequireController::class,'gov_requirement'])->name('gov-requirement');
+Route::get('/govt-require-mappingList',[GovRequireController::class,'govt_require_mappingList'])->name('govt-require-mappingList');
+
+Route::get('/govt_require_studentList',[GovRequireController::class,'govt_require_studentList'])->name('govt_require_studentList');
+Route::get('/govt_require_contactNo',[GovRequireController::class,'govt_require_contactNo'])->name('govt_require_contactNo');
+
 
 //
 Route::get('/hostel',[HostelController::class,'hostel'])->name('hostel');
@@ -142,6 +161,10 @@ Route::get('/app',[AppController::class,'android_app'])->name('app');
 
 //  user right
 Route::get('/user-right',[UserRightController::class,'UserRight'])->name('user-right');
+Route::get('/userRightAddUser',[UserRightController::class,'userRightAddUser'])->name('userRightAddUser');
+Route::get('/userRightUserList',[UserRightController::class,'userRightUserList'])->name('userRightUserList');
+Route::get('/userRightAdduserEdit',[UserRightController::class,'userRightAdduserEdit'])->name('userRightAdduserEdit');
+
 
 // smartclass
 Route::get('/smartclass',[SmartClassController::class,'SmartClass'])->name('smartclass');
@@ -151,3 +174,34 @@ Route::get('smartclass/video_lecture',[VideoLectureController::class,'VideoLectu
 
 // VideoLectureAdd
 Route::get('smartclass/video_lecture_add',[VideoLectureAddController::class,'VideoLectureAdd'])->name('videolectureadd');
+
+
+
+
+
+//leave
+
+Route::get('/leave',[LeaveController::class,'index'])->name('leave');
+Route::get('/student-leave-form',[LeaveController::class,'studentleaveform'])->name('studentleaveform');
+Route::get('/student-leave-list',[LeaveController::class,'studentleavelist'])->name('studentleavelist');
+
+
+
+
+//school info
+Route::get('/school-info',[SchoolInfoController::Class,'index'])->name('schoolInfo');
+Route::get('/school-school_general_info',[SchoolInfoController::Class,'schoolgeneralinfo'])->name('schoolgeneralinfo');
+Route::get('/school-info_academic-calender',[SchoolInfoController::Class,'schoolinfoacademiccalender'])->name('schoolinfoacademiccalender');
+Route::get('/schoolInfo-AddBusFeeCategory-MonthlyInstallmentwise',[SchoolInfoController::Class,'schoolinfoaddbuscategorymonthlywise'])->name('schoolinfoaddbuscategorymonthlywise');
+Route::get('/schoolInfo-addstudentidentitycategory',[SchoolInfoController::Class,'schoolInfoaddstudentidentitycategory'])->name('schoolInfoaddstudentidentitycategory');
+Route::get('/school-info_addfeecategory',[SchoolInfoController::class,'schoolInfoAddFeeCategory'])->name('schoolInfoAddFeeCategory');
+Route::get('/school-info_syllabusDetails',[SchoolInfoController::class,'school_info_syllabusDetails'])->name('school_info_syllabusDetails');
+
+
+
+
+//holiday
+Route::get('/holiday',[HolidayController::class,'index'])->name('holiday');
+Route::get('/holiday-addHoliday',[HolidayController::class,'holidayAddHoliday'])->name('holidayAddHoliday');
+Route::get('/holiday-editHoliday',[HolidayController::class,'holidayEditHoliday'])->name('holidayEditHoliday');
+Route::get('/holiday-holidayList',[HolidayController::class,'holidayHolidayList'])->name('holidayHolidayList');
