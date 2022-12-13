@@ -434,4 +434,3 @@
         <!-- /.sidebar -->
     </aside>
     <div class="content-wrapper" id="get_content">
->>>>>>> 34c9787d0fbae4c20a2c972d4e9f3d099cfa31d5
