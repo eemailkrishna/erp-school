@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
 function get_submit(school_roll_no){
     $.ajax({
@@ -382,7 +384,7 @@ function get_submit(school_roll_no){
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
     $('.select2').select2();
 </script>

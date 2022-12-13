@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
    function fill_detail(value){
         $.ajax({
@@ -570,6 +572,7 @@
           </div>
     </div>
 </section>
+@include('common.footer');
 <script>
     $('.select2').select2();
 

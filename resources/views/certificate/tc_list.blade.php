@@ -1,4 +1,6 @@
-			<script>
+@include('common.header');
+@include('common.navbar');
+<script>
 			function valid(s_no,roll_no){   
 var myval=confirm("Are you sure want to delete this record !!!!");
 if(myval==true){
@@ -703,6 +705,7 @@ success: function(detail){
       </div>
       <!-- /.row -->
     </section>
+    @include('common.footer');
    <script>
   $(function () {
     $('#example1').DataTable()

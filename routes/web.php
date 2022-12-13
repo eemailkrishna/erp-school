@@ -78,6 +78,28 @@ Route::get('/penalty',[PenalityController::class,'penality'])->name('penality');
 
 //  Certificate route
 Route::get('/certificate',[CertificateController::class,'certificate'])->name('certificate');
+Route::get('certificate/character_certificate_form', [CertificateController::class, 'character_certificate_form'])->name('cc');
+Route::get('certificate/character_certificate_form_edit', [CertificateController::class, 'character_certificate_form_edit'])->name('ccedit');
+Route::get('certificate/annualfee_certificate_form_edit', [CertificateController::class, 'annualfee_certificate_form_edit'])->name('ac');
+Route::get('certificate/annualfee_form',[CertificateController::class,'annualfee_form'])->name('af');
+Route::get('certificate/birth_certificate', [CertificateController::class, 'birth_certificate'])->name('birth');
+Route::get('certificate/character_certificate_list', [CertificateController::class, 'character_certificate_list'])->name('cclist');
+Route::get('certificate/event_certificate_form', [CertificateController::class, 'event_certificate_form'])->name('ecf');
+Route::get('certificate/bonafied_form', [CertificateController::class, 'bonafied_form'])->name('bf');
+Route::get('certificate/bonafied_certificate_form', [CertificateController::class, 'bonafied_Cer_form'])->name('bcf');
+Route::get('certificate/tutionfee_form', [CertificateController::class, 'tutionfee_form'])->name('tf');
+Route::get('certificate/tc_list', [CertificateController::class, 'tc_list'])->name('tl');
+Route::get('certificate/tc_form', [CertificateController::class, 'tc_form'])->name('tf');
+Route::get('certificate/tc_form_edit', [CertificateController::class, 'tc_form_edit'])->name('tfe');
+Route::get('certificate/sport_certificate_list', [CertificateController::class, 'sport_certificate_list'])->name('sc');
+Route::get('certificate/sport_certificate_form', [CertificateController::class, 'sport_certificate_form'])->name('scf');
+Route::get('certificate/sport_certificate_form', [CertificateController::class, 'sport_certificate_form'])->name('scf');
+Route::get('certificate/event_certificate_list', [CertificateController::class, 'event_certificate_list'])->name('ecl');
+Route::get('certificate/bonafied_certificate_list', [CertificateController::class, 'bonafied_certificate_list'])->name('bl');
+Route::get('certificate/tutionfee_certificate_list', [CertificateController::class, 'tutionfee_certificate_list'])->name('bl');
+Route::get('certificate/annualfee_certificate_list', [CertificateController::class, 'annualfee_certificate_list'])->name('afl');
+Route::get('certificate/caste_certificate_form', [CertificateController::class, 'caste_certificate_form'])->name('ccf');
+Route::get('certificate/caste_certificate_list', [CertificateController::class, 'caste_certificate_list'])->name('ccl');
 
 
 // Examination

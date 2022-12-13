@@ -1,3 +1,5 @@
+@include('common.header');
+    @include('common.navbar');
 <script type="text/javascript">
       $("#my_form").submit(function(e){
         e.preventDefault();
@@ -114,5 +116,7 @@ window.scrollTo(0, 0);
           </div>
     </div>
 </section>
+
+@include('common.footer');
 
   

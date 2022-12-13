@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
    function fill_detail(value){
      
@@ -415,7 +417,7 @@ window.scrollTo(0, 0);
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
     $('.select2').select2();
 </script>
