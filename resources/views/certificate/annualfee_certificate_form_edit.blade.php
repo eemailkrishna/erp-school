@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
       $("#my_form").submit(function(e){
         e.preventDefault();
@@ -6,7 +8,7 @@
 window.scrollTo(0, 0);
     loader();
         $.ajax({
-            url: access_link+"certificate/character_certificate_form_edit_api.php",
+            url: access_link+"certificate/annualfee_certificate_form_edit_api.php",
             type: "POST",
             data: formdata,
             mimeTypes:"multipart/form-data",
@@ -17,7 +19,7 @@ window.scrollTo(0, 0);
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
 				   alert_new('Successfully Complete','green');
-				   get_content('certificate/character_certificate_list');
+				   get_content('certificate/annualfee_certificate_list');
             }
 			}
          });
@@ -30,8 +32,7 @@ window.scrollTo(0, 0);
       <ol class="breadcrumb">
          <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="javascript:get_content('certificate/certificate')"><i class="fa fa-certificate"></i> Certificate</a></li>
-        <li><a href="javascript:get_content('certificate/character_certificate_list')">CC List</a></li>
-        <li class="active">Character Certificate Edit</li>
+        <li class="active">Annual Certificate Edit</li>
       </ol>
     </section>
 
@@ -45,7 +46,7 @@ window.scrollTo(0, 0);
 	       <!-- general form elements disabled -->
           <div class="box box-primary my_border_top">
             <div class="box-header with-border ">
-              <h3 class="box-title">Character Certificate Edit</h3>
+              <h3 class="box-title">Annualfee Certificate Edit</h3>
             </div>
             <!-- /.box-header -->
 <!------------------------------------------------Start Registration form--------------------------------------------------->
@@ -55,33 +56,33 @@ window.scrollTo(0, 0);
             <div class="box-body "  >
 			
 			<form role="form" method="post" enctype="multipart/form-data" id="my_form">
-			 <input type="hidden"  name="s_no"  value="783" >
+			 <input type="hidden"  name="s_no"  value="93" >
 			
 			          <div class="col-md-3 ">
 						<div class="form-group">
 						  <label>student Name</label>
-						   <input type="text"  name="character_student_name"  value="Umesh" placeholder="Student Name"   id="student_name" class="form-control" readonly>
+						   <input type="text"  name="annualfee_student_name"  value="joy" placeholder="Student Name"   id="student_name" class="form-control" readonly>
 					       </div>
 					  </div>
 					  
 					  <div class="col-md-3 ">
 						<div class="form-group">
 						  <label>Father's Name</label>
-						   <input type="text"  name="character_student_name"  value="Rajesh" placeholder="Student Name"   id="student_name" class="form-control" readonly>
+						   <input type="text"  name="annualfee_student_name"  value="peter" placeholder="Student Name"   id="student_name" class="form-control" readonly>
 					       </div>
 					  </div>
 			
 					  <div class="col-md-3 ">	
 					      <div class="form-group" >
 						  <label>Student Roll No</label>
-						  <input type="text" name="character_student_roll_no"  value="2000298" placeholder="student Roll No."  id="school_roll_no" class="form-control" readonly>
+						  <input type="text" name="annualfee_student_roll_no"  value="2000345" placeholder="student Roll No."  id="school_roll_no" class="form-control" readonly>
 					      </div>
 				      </div>
 					  
 					  <div class="col-md-3 ">	
 					      <div class="form-group" >
 						  <label>School Name</label>
-						  <input type="text" name="character_school_name"  value="SIMPTION TECH PVT LTD" placeholder="student Roll No."  id="school_roll_no" class="form-control">
+						  <input type="text" name="annualfee_school_name"  value="SIMPTION TECH PVT LTD" placeholder="student Roll No."  id="school_roll_no" class="form-control">
 					      </div>
 				      </div>
 				      
@@ -91,28 +92,28 @@ window.scrollTo(0, 0);
 						<div class="col-sm-12">
 						 <div class="col-sm-6">
 						
-						   <input type="text" name="character_current_year_from"  class="form-control" placeholder="From" value="1"  />
+						   <input type="text" name="annualfee_current_year_from"  class="form-control" placeholder="From" value="2022"  />
 						   </div>
 						  
 						   <div class="col-sm-6">
 						 
-						   	<input type="text" class="form-control" name="character_current_year_to" placeholder="To" value="2" /><br/>
+						   	<input type="text" class="form-control" name="annualfee_current_year_to" placeholder="To" value="2022" /><br/>
                           </div>
 					   </div>
 					</div>
 				     </div>
 					  
 				     <div class="col-md-3 ">	
-						<div class="form-group" >
-						 <label> Character Type</label>
-						  <input type="text"  name="character_type" placeholder="character Type"  value="super" class="form-control">
+						<div class="form-group">
+						 <label>Annualfee Amount</label>
+						 <input type="text"  name="annualfee_type" placeholder=""  value="2000" class="form-control">
 						</div>
 					  </div>
 				 
 					  <div class="col-md-3 ">	
 						<div class="form-group" >
 						 <label>Issued Date</label>
-						  <input type="date"  name="character_issue_date" id="date_of_school_leaving" placeholder="Organized  Date"  value="2022-12-15" class="form-control">
+						  <input type="date"  name="annualfee_issue_date" id="date_of_school_leaving" placeholder="Organized  Date"  value="2022-10-04" class="form-control">
 						</div>
 					  </div>
 				 
@@ -131,5 +132,6 @@ window.scrollTo(0, 0);
           </div>
     </div>
 </section>
+@include('common.footer');
 
   

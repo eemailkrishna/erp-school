@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
    function fill_detail(value){
      
@@ -17,7 +19,7 @@
 window.scrollTo(0, 0);
     loader();
         $.ajax({
-            url: access_link+"certificate/bonafied_form_api.php",
+            url: access_link+"certificate/character_certificate_form_api.php",
             type: "POST",
             data: formdata,
             mimeTypes:"multipart/form-data",
@@ -28,7 +30,7 @@ window.scrollTo(0, 0);
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
 				   alert_new('Successfully Complete','green');
-				   get_content('certificate/bonafied_certificate_list');
+				   get_content('certificate/character_certificate_list');
             }
 			}
          });
@@ -42,7 +44,7 @@ window.scrollTo(0, 0);
       <ol class="breadcrumb">
         <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="javascript:get_content('certificate/certificate')"><i class="fa fa-certificate"></i> Certificate</a></li>
-      <li class="active">Bonafied Certificate Form</li> </ol>
+      <li class="active">Character Certificate Form</li> </ol>
     </section>
 
 	
@@ -55,7 +57,7 @@ window.scrollTo(0, 0);
 	       <!-- general form elements disabled -->
           <div class="box box-primary my_border_top">
             <div class="box-header with-border ">
-              <h3 class="box-title"> Bonafied Certificate Generate</h3>
+              <h3 class="box-title"> Character Certificate Generate</h3>
             </div>
             <!-- /.box-header -->
 <!------------------------------------------------Start Registration form--------------------------------------------------->
@@ -64,7 +66,7 @@ window.scrollTo(0, 0);
 						<form role="form" method="post" enctype="multipart/form-data" id="my_form">
 			<div class="col-md-12">
 			 <div class="col-md-6 ">				
-					<div class="form-group">
+					<div class="form-group" >
 					  <label>Search Student</label>
 					  <select name="" class="form-control select2" onchange="fill_detail(this.value);" required>
 					  <option value="">Select student</option>
@@ -335,28 +337,29 @@ window.scrollTo(0, 0);
 			          <div class="col-md-3 ">
 						<div class="form-group">
 						  <label>student Name</label>
-						   <input type="text"  name="bonafied_student_name" value="" placeholder="student Name"   id="student_name" class="form-control" readonly>
+						   <input type="text"  name="character_student_name" value="" placeholder="student Name"   id="student_name" class="form-control" readonly>
 					       </div>
 					  </div>
 					  
 					  <div class="col-md-3 ">	
 					    <div class="form-group" >
 					     <label>Father's Name</label>
-					     <input type="text"  name="bonafied_student_father_name" id="student_father_name" placeholder="Father's Name"  value="" class="form-control" readonly>
+					     <input type="text"  name="character_student_father_name" id="student_father_name" placeholder="Father's Name"  value="" class="form-control" readonly>
 					    </div>
 				      </div>
 			
 					  <div class="col-md-3 ">	
 					      <div class="form-group" >
 						  <label>Student Roll No</label>
-						  <input type="text" name="bonafied_student_roll_no"  value="" placeholder="Student Roll No"  id="student_roll_no" class="form-control" readonly>
+						  <input type="text" name="character_student_roll_no"  value="" placeholder="Student Roll No"  id="school_roll_no" class="form-control" readonly>
+						  <input type="hidden" name="student_roll_no"  value="" placeholder="Student Roll No"  id="student_roll_no" class="form-control" readonly>
 					      </div>
 				      </div>
 					  
 					  <div class="col-md-3 ">
 						<div class="form-group">
 						  <label>School Name</label>
-						   <input type="text"  name="bonafied_school_name" value="SIMPTION TECH PVT LTD" placeholder="School Name" required  class="form-control" >
+						   <input type="text"  name="character_school_name" value="SIMPTION TECH PVT LTD" placeholder="School Name" required  class="form-control" >
 					       </div>
 					  </div>
 				     
@@ -366,28 +369,28 @@ window.scrollTo(0, 0);
 						<div class="col-sm-12">
 						 <div class="col-sm-6">
 						
-						   <input type="text" name="bonafied_current_year_from"  class="form-control" placeholder="From" required />
+						   <input type="text" name="character_current_year_from"  class="form-control" placeholder="From" required />
 						   </div>
 						  
 						   <div class="col-sm-6">
 						 
-						   	<input type="text" class="form-control" name="bonafied_current_year_to" placeholder="To" required /><br/>
+						   	<input type="text" class="form-control" name="character_current_year_to" placeholder="To" required /><br/>
                           </div>
 					   </div>
 					</div>
 				     </div>
 					 
-				     <div class="col-md-3">	
+				     <div class="col-md-3 ">	
 						<div class="form-group" >
-						 <label> Bonafied Type</label>
-						  <input type="text"  name="bonafied_type" placeholder="Bonafied Type"  value="" class="form-control" required>
+						 <label> Character Type</label>
+						  <input type="text"  name="character_type" placeholder="Character Type"  value="" class="form-control">
 						</div>
 					  </div>
 				 
 					  <div class="col-md-3 ">	
 						<div class="form-group" >
 						 <label>Issued Date</label>
-						  <input type="date"  name="bonafied_issue_date"  placeholder="Issued Date"  value="" class="form-control" required>
+						  <input type="date"  name="character_issue_date"  placeholder="Issued Date"  value="" class="form-control" required>
 						</div>
 					  </div>
 				 
@@ -408,7 +411,7 @@ window.scrollTo(0, 0);
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
     $('.select2').select2();
 </script>

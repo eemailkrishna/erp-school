@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
       $("#my_form").submit(function(e){
         e.preventDefault();
@@ -271,6 +273,7 @@
           </div>
     </div>
 </section>
+@include('common.footer');
 <script>
 $('.select2').select2();
 </script>

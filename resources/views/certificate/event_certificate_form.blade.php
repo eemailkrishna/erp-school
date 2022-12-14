@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
       $("#my_form").submit(function(e){
         e.preventDefault();
@@ -27,9 +29,9 @@ window.scrollTo(0, 0);
        Certificate Management		<small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="javascript:get_content('certificate/certificate')"><i class="fa fa-certificate"></i> Certificate</a></li>
-        <li><a href="javascript:get_content('certificate/event_certificate_list')"><i class="fa fa-certificate"></i> Event Certificate List</a></li>
+        <li><a href="{{url('index_content')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{url('certificate/certificate')}}"><i class="fa fa-certificate"></i> Certificate</a></li>
+        <li><a href="{{url('certificate/event_certificate_list')}}"><i class="fa fa-certificate"></i> Event Certificate List</a></li>
       <li class="active">Edit Event Certificate Form</li> </ol>
     </section>
 
@@ -106,5 +108,5 @@ window.scrollTo(0, 0);
           </div>
     </div>
 </section>
-
+@include('common.footer');
  
