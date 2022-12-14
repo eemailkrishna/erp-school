@@ -13,7 +13,7 @@ class StudentController extends Controller
         return view('student.student_registration');
     }
     public function registration_list(){
-        return view('student.student_registration_list_fatch');
+        return view('student.student_registration_list');
     }
     public function admission_list(){
         return view('student.student_admission_list');
