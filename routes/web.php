@@ -253,6 +253,25 @@ Route::get('/schoolInfo-AddBusFeeCategory-MonthlyInstallmentwise',[SchoolInfoCon
 Route::get('/schoolInfo-addstudentidentitycategory',[SchoolInfoController::Class,'schoolInfoaddstudentidentitycategory'])->name('schoolInfoaddstudentidentitycategory');
 Route::get('/school-info_addfeecategory',[SchoolInfoController::class,'schoolInfoAddFeeCategory'])->name('schoolInfoAddFeeCategory');
 Route::get('/school-info_syllabusDetails',[SchoolInfoController::class,'school_info_syllabusDetails'])->name('school_info_syllabusDetails');
+Route::get('/student-user-password-change',[SchoolInfoController::class,'student_user_password_change'])->name('student_user_password_change');
+Route::get('/school-info-add-class-stream',[SchoolInfoController::class,'school_info_add_class_stream'])->name('school_info_add_class_stream');
+Route::get('/school-info-add-section',[SchoolInfoController::class,'school_info_add_section'])->name('school_info_add_section');
+Route::get('/school-info-add-group',[SchoolInfoController::class,'school_info_add_group'])->name('school_info_add_group');
+Route::get('/school-info-exam-type-add',[SchoolInfoController::class,'school_info_exam_type_add'])->name('school_info_exam_type_add');
+Route::get('/school-info-subject-add',[SchoolInfoController::class,'school_info_subject_add'])->name('school_info_subject_add');
+Route::get('/school-info-fee-types-add',[SchoolInfoController::class,'school_info_fee_types_add'])->name('school_info_fee_types_add');
+Route::get('/school-info-class-wise-subject',[SchoolInfoController::class,'school_info_class_wise_subject'])->name('school_info_class_wise_subject');
+Route::get('/school-info-discount-types-add',[SchoolInfoController::class,'school_info_discount_types_add'])->name('school_info_discount_types_add');
+Route::get('/school-info-total-list',[SchoolInfoController::class,'school_info_total_list'])->name('school_info_total_list');
+
+
+
+
+
+
+
+
+
 
 
 

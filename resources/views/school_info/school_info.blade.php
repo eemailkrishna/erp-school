@@ -38,7 +38,7 @@ window.scrollTo(0, 0);
         </div>
 		</a>
 				    		   
-		 <a href="javascript:get_content('school_info/exam_type_add')">
+		 <a href="{{url('/school-info-exam-type-add')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#3B7A57;">
             <div class="inner"><br>
@@ -48,7 +48,7 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/exam_type_add')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-exam-type-add')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
@@ -66,7 +66,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-	     <a href="javascript:get_content('school_info/add_section')">
+	     <a href="{{url('/school-info-add-section')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#C46210;">
             <div class="inner"><br>
@@ -76,11 +76,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/add_section')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-add-section')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-		    		   		<a href="javascript:get_content('school_info/add_class_stream')">
+		    		   		<a href="{{url('school-info-add-class-stream')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#3B3B6D;">
             <div class="inner"><br>
@@ -90,11 +90,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/add_class_stream')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('school-info-add-class-stream')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-		    		   <a href="javascript:get_content('school_info/add_stream_group')">
+		    		   <a href="{{url('/school-info-add-group')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#FF7E00;">
             <div class="inner"><br>
@@ -104,11 +104,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/add_stream_group')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-add-group')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-	    		   <a href="javascript:get_content('school_info/subject_add')">
+	    		   <a href="{{url('/school-info-subject-add')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#804040;">
             <div class="inner"><br>
@@ -118,11 +118,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/subject_add')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-subject-add')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-	    		   	<a href="javascript:get_content('school_info/class_wise_subject')">
+	    		   	<a href="{{url('/school-info-class-wise-subject')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#34B334;">
             <div class="inner"><br>
@@ -132,11 +132,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/class_wise_subject')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-class-wise-subject')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-	    			       	<a href="javascript:get_content('school_info/fee_types_add')">
+	    			       	<a href="{{url('/school-info-fee-types-add')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#551B8C;">
             <div class="inner"><br>
@@ -146,11 +146,11 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/fee_types_add')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-fee-types-add')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
-			    		   	<a href="javascript:get_content('school_info/discount_types_add')">
+			    		   	<a href="{{url('/school-info-discount-types-add')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#915C83;">
             <div class="inner"><br>
@@ -160,7 +160,7 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/discount_types_add')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-discount-types-add')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
@@ -178,7 +178,7 @@ window.scrollTo(0, 0);
           </div>
         </div>
 		</a>
-		    		   <a href="javascript:get_content('school_info/total_list')">
+		    		   <a href="{{url('/school-info-total-list')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#4B5320;">
             <div class="inner"><br>
@@ -188,12 +188,12 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/total_list')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/school-info-total-list')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
 	
-		   <a href="javascript:get_content('school_info/student_user_password_change')">
+		   <a href="{{url('/student-user-password-change')}}">
         <div class="col-md-3 col-md-6">
           <div class="small-box" style="background-color:#4B5320;">
             <div class="inner"><br>
@@ -203,7 +203,7 @@ window.scrollTo(0, 0);
             <div class="icon">
               <i class="ion"></i>
             </div>
-            <a href="javascript:get_content('school_info/student_user_password_change')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/student-user-password-change')}}" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 		</a>
