@@ -1,5 +1,5 @@
-@include('common.header');
-@include('common.navbar');
+@include('common.header')
+@include('common.navbar')
 
 <section class="content-header">
       <h1>
@@ -615,5 +615,5 @@
 
 
 
-@include('common.footer');
+@include('common.footer')
 	<!-------------------------------------- Support Panel End --------------------------------->

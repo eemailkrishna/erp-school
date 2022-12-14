@@ -526,5 +526,3 @@ display:block;
 
         </section>
         <!-- /.sidebar -->
-    </aside>
-    <div class="content-wrapper" id="get_content">

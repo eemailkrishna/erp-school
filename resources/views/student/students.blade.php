@@ -1,5 +1,5 @@
-    @include('common.header');
-    @include('common.navbar');
+    @include('common.header')
+    @include('common.navbar')
 
     <section class="content-header">
       <h1>
@@ -330,4 +330,4 @@
 
     </section>
 
-    @include('common.footer');
+    @include('common.footer')
