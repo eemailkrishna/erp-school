@@ -1,3 +1,5 @@
+   @include('common.header')
+   @include('common.navbar')
     <section class="content-header">
       <h1>
        Fees Management        <small>Control Panel</small>
@@ -14,7 +16,7 @@
     <section class="content">
       <div class="row">
         <div class="col-md-12">
-         
+
           <!-- /.box -->
 
           <div class="box">
@@ -38,8 +40,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                
-			
+
+
                 </tbody>
              </table>
             </div>
@@ -64,4 +66,4 @@
             });
         });
     </script>
-	
+@include('common.footer')
