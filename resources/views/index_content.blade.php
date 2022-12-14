@@ -12,6 +12,7 @@
     </ol>
 </section>
 <section class="col-lg-12 ">
+<<<<<<< HEAD
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title" style="color:teal;"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;<b>New
@@ -124,6 +125,319 @@
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title" style="color:teal;"><i class="fa fa-inr"></i>&nbsp;&nbsp;&nbsp;<b>Account</b></h3>
+=======
+	<div class="box box-success" >
+				<div class="box-header with-border">
+					<h3 class="box-title" style="color:teal;"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;<b>New Panels</b></h3>
+				</div>
+				<div class="box-body">
+						<a href="{{url('smartclass')}}">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#884EA0;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Smart Class School Panel</h3>
+							      	<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('smartclass/smartclass')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+					</a>
+						<a href="javascript:get_content('call_management/call_management')">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#808000;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Call Management<img src="http://uppsc.up.nic.in/images/new_2.gif" alt="" border="0"></h3>
+							    	<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('call_management/call_management')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+					</a>
+						<a href="https://simptionsmartclass.com/demo.php" target="_blank">
+					<div  style="display:none" class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#D35400;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Smart Class Student Panel<img src="http://uppsc.up.nic.in/images/new_2.gif" alt="" border="0"></h3>
+						       <i class="ion"><img src="../../school_software_v1_old/images/paid-min.png" style="width:70px;margin-bottom:20px;" alt="Simption Tech Pvt Ltd "  title="School Management System" class="image1"></i>
+						</div>
+						<a href="https://simptionsmartclass.com" target="_blank" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+					</a>
+					</div>
+				</div>
+          <div  class="box box-success" >
+				<div class="box-header with-border">
+					<h3 class="box-title" style="color:teal;"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;<b>Important</b></h3>
+				</div>
+            <!-- /.box-header -->
+				<div class="box-body">
+														 		<a href="javascript:get_content('attendance/attendance')">
+							<div class="col-lg-3 col-xs-6">
+							  <div class="small-box" style="background-color:#E32636;">
+								<div class="inner"><br>
+								  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Attendance</h3>
+									<p style="margin-left:10px;color:#fff;">Enter</p>
+								</div>
+								<a href="javascript:get_content('attendance/attendance')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+							  </div>
+							</div>
+						 </a>
+				 						 <a href="javascript:get_content('enquiry/enquiry')">
+							<div class="col-lg-3 col-xs-6">
+							  <div class="small-box" style="background-color:#3B7A57;">
+								<div class="inner"><br>
+								  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Enquiry</h3>
+									<p style="margin-left:10px;color:#fff;">Enter</p>
+								</div>
+								<a href="javascript:get_content('enquiry/enquiry')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+							  </div>
+							</div>
+						</a>
+												<a href="javascript:get_content('staff/staff')">
+							<div class="col-lg-3 col-xs-6">
+							  <div class="small-box" style="background-color:#9F2B68;">
+								<div class="inner"><br>
+								  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Staff</h3>
+									<p style="margin-left:10px;color:#fff;">Enter</p>
+								</div>
+								<a href="javascript:get_content('staff/staff')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+							  </div>
+							</div>
+						</a>
+												 						<a href="javascript:get_content('student/students')">
+							<div class="col-lg-3 col-xs-6">
+							  <div class="small-box" style="background-color:#C46210;">
+								<div class="inner"><br>
+								  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Student</h3>
+									<p style="margin-left:10px;color:#fff;">Enter</p>
+								</div>
+								<a href="javascript:get_content('student/students')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+							  </div>
+							</div>
+						</a>
+				</div>
+          </div>
+      </section>
+	<!-------------------------------------- Important Panel End --------------------------------->
+    <!-------------------------------------- Account Panel Start --------------------------------->
+<section class="col-lg-12 ">
+    <div class="box box-success" >
+		<div class="box-header with-border">
+				<h3 class="box-title" style="color:teal;"><i class="fa fa-inr"></i>&nbsp;&nbsp;&nbsp;<b>Account</b></h3>
+		</div>
+		<div class="box-body">
+				 					<a href="javascript:get_content('account/account')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#3B3B6D;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Account</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('account/account')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('dues/dues')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#FF7E00;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Dues</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('dues/dues')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+										<a href="javascript:get_content('fees_monthly/fees')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#804040;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Fees</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('fees_monthly/fees')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+										<a href="javascript:get_content('penalty/penalty')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:	#34B334;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Penalty</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('penalty/penalty')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+		</div>
+    </div>
+</section>
+	<!-------------------------------------- Account Panel End --------------------------------->
+	<!-------------------------------------- Academic Panel Start --------------------------------->
+	<section class="col-lg-12 ">
+         <div class="box box-success" >
+			<div class="box-header with-border">
+				<h3 class="box-title" style="color:teal;"><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Academic</b></h3>
+			</div>
+            <div class="box-body">
+			 				<a href="javascript:get_content('certificate/certificate')">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#551B8C;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Certificate</h3>
+							<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('certificate/certificate')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+				</a>
+				 				<a href="javascript:get_content('examination/examination')">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#915C83;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Examination</h3>
+							<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('examination/examination')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+				</a>
+				 				<a href="javascript:get_content('homework/homework')">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#4B5320;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Homework/Classwork</h3>
+							<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('homework/homework')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+					</a>
+					 					<a href="javascript:get_content('exam_paper_setter/exam_paper_setter')">
+					<div class="col-lg-3 col-xs-6">
+					  <div class="small-box" style="background-color:#3B444B;">
+						<div class="inner"><br>
+						  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Set Paper</h3>
+							<p style="margin-left:10px;color:#fff;">Enter</p>
+						</div>
+						<a href="javascript:get_content('adminexam_paper_setter/exam_paper_setter')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+					  </div>
+					</div>
+					</a>
+							 </div>
+          </div>
+        </section>
+	<!-------------------------------------- Academic Panel End --------------------------------->
+	 <!-------------------------------------- Services Panel Start --------------------------------->
+	<section class="col-lg-12 ">
+        <div class="box box-success" >
+            <div class="box-header with-border">
+				 <h3 class="box-title" style="color:teal;"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;&nbsp;<b>Services</b></h3>
+		    </div>
+            <div class="box-body">
+			 					<a href="javascript:get_content('complaint/complaint')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#A2006D;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Complaints</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('complaint/complaint')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('gallery/gallery')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#007FFF;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Gallery</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('gallery/gallery')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('sms/sms_panel')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#FF1493;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">SMS Services</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('sms/sms')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('time_table/time_table')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#21ABCD;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Time Table</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('time_table/time_table')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+		     </div>
+         </div>
+     </section>
+	<!-------------------------------------- Services Panel End --------------------------------->
+      <!------------------------------ Management Panel Start --------------------------------->
+	<section class="col-lg-12">
+        <div <div class="box box-success" >
+            <div class="box-header with-border">
+				<h3 class="box-title" style="color:teal;"><i class="fa fa-bar-chart"></i>&nbsp;&nbsp;&nbsp;<b>Management</b></h3>
+			</div>
+            <div class="box-body">
+			 					<a href="javascript:get_content('event_management/event_management')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#E0218A;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Event</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('event_management/event_management')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('holiday/holiday')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#7C0A02;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Holiday</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('holiday/holiday')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('leave/leave')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#E48400;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Leave</h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('leave/leave')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+					</a>
+					 					<a href="javascript:get_content('sports/sports')">
+						<div class="col-lg-3 col-xs-6">
+						  <div class="small-box" style="background-color:#CC6666;">
+							<div class="inner"><br>
+							  <h3 style="font-size:20px;margin-left:10px;color:#fff;">Sports </h3>
+								<p style="margin-left:10px;color:#fff;">Enter</p>
+							</div>
+							<a href="javascript:get_content('sports/sports')" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+						  </div>
+						</div>
+				    </a>
+							</div>
+>>>>>>> fa5916f8f56838463404fb706d5a461579353eab
         </div>
         <div class="box-body">
             <a href="javascript:get_content('account/account')">
@@ -670,4 +984,8 @@
 
 
 @include('common.footer')
+<<<<<<< HEAD
 <!-------------------------------------- Support Panel End --------------------------------->
+=======
+	<!-------------------------------------- Support Panel End --------------------------------->
+>>>>>>> fa5916f8f56838463404fb706d5a461579353eab

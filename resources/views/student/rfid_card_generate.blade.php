@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
    function for_list(){
 			var student_class_section= document.getElementById('student_class_section').value;
@@ -201,7 +203,7 @@
           </div>
     </div>
 </section>
-
+@include('common.footer');
 <script>
 	function open_model(roll_no){
 	var student=document.getElementById("student_name_"+roll_no).value;

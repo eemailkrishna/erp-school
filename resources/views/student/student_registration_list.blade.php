@@ -1,4 +1,6 @@
-    <section class="content-header">
+@include('common.header');
+@include('common.navbar');
+   <section class="content-header">
       <h1>
         Student Management        <small>Control Panel</small>
       </h1>
@@ -108,7 +110,7 @@ success: function(detail){
       </div>
       <!-- /.row -->
     </section>
-
+    @include('common.footer');
     <script>
 $(function(){
  for_list('All');

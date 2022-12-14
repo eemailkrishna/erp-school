@@ -16,6 +16,99 @@
                 } else if (set_param == 'hindi_typing') {
                     var langue345 = set_value;
                     $("#hindi_typing").val(langue345);
+<<<<<<< HEAD
+                       	if(langue345=='Hindi'){
+			pramukhIME.setLanguage('hindi', 'pramukhindic');
+				    var kb = new PramukhIndic('hindi');
+var settings = [{language:'all', kb: 'pramukhindic', digitInEnglish: true}];
+pramukhIME.setSettings(settings);
+	}else if(langue345=='Gujarati'){
+			pramukhIME.setLanguage('gujarati', 'pramukhindic');
+				    var kb = new PramukhIndic('gujarati');
+var settings = [{language:'all', kb: 'pramukhindic', digitInEnglish: true}];
+pramukhIME.setSettings(settings);
+	}else{
+	    	pramukhIME.addKeyboard(PramukhIndic);
+            pramukhIME.enable();
+            pramukhIME.setLanguage('english', 'pramukhime');
+	}
+                  }else{
+                      url_control();
+                  }
+              }
+           });
+}
+</script>
+<style>
+@media screen and (min-width: 1193px) {
+#school_name{
+display:block;
+}
+}
+@media screen and (max-width: 1192px) {
+#school_name{
+display:none;
+}
+}
+@media screen and (max-width: 768px) {
+#school_name234{
+display:none;
+}
+#school_name2341{
+display:block;
+}
+}
+</style>
+<header class="main-header" >
+    <!-- Logo -->
+    <a href="{{url('/')}}" class="logo" style="background-image:linear-gradient(to bottom right, #b92b27 , #1565C0);">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini" id="school_name234" >SIMPTION</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg" id="school_name234" >SIMPTION</span>
+      <span class="logo-lg" id="school_name2341" >SIMPTION TECH PVT LTD</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" style="background-image:linear-gradient(to bottom right, #b92b27 , #1565C0);">
+      <!-- Sidebar toggle button-->
+<h6 id="school_name2341" style="color:black;  font-size:15px; margin-top:22px; margin-bottom:-55px; padding-left:30px; padding-right:50px; margin-left:15px;">Annual Maintenance Free Service Date:  To </h6>
+<h4 id="school_name" style="color:white; margin-top:23px; margin-bottom:-45px; padding-left:30px; padding-right:50px;"><b>SIMPTION TECH PVT LTD</b></h4> </br>
+<h5 id="school_name" style="color:white; font-size:15px; margin-top:6px; margin-bottom:-69px; padding-left:459px; padding-right:212px;">
+ Support Contacts - 8989456770,8120998373,8357860328
+</h5> <br/>
+<h6 id="school_name" style="color:white; font-size:15px; margin-top:57px; margin-bottom:-69px; padding-left:459px; padding-right:212px;">
+            <marquee onmouseover="this.stop();" onmouseout="this.start();">
+            </marquee>
+        </h6> <br/>
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="" height="15" width="15" class="img-circle">
+              <span class="hidden-xs">rahul@simption.com</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="" height="70" width="70" class="img-circle">
+                <p>
+                  <small>rahul@simption.com</small>
+				  <small>9074822542</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="{{url('school_info/school_info_general')}}" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="{{url('attachment/logout')}}" class="btn btn-default btn-flat">Sign out</a>
+=======
                     if (langue345 == 'Hindi') {
                         pramukhIME.setLanguage('hindi', 'pramukhindic');
                         var kb = new PramukhIndic('hindi');
@@ -241,6 +334,7 @@
                 <div class="pull-left info">
                     <p></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
                 </div>
             </div>
             <ul class="sidebar-menu" style="height:500px;overflow: scroll !important;">
@@ -429,8 +523,6 @@
     <!-- /.sidebar -->
   </aside>
  <div class="content-wrapper" id="get_content">
-=======
+
         </section>
         <!-- /.sidebar -->
-    </aside>
-    <div class="content-wrapper" id="get_content">

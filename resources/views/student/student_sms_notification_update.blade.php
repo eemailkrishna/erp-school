@@ -1,4 +1,6 @@
-  <script type="text/javascript">
+@include('common.header');
+@include('common.navbar');
+<script type="text/javascript">
    function for_section(value){
  $('#student_class_section').html("<option value='' >Loading....</option>"); 
        $.ajax({
@@ -171,3 +173,5 @@ $('#for_student_list').html('');
      </section>
 
   </form>	
+
+  @include('common.footer');

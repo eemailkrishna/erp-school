@@ -1,153 +1,188 @@
-<script type="text/javascript">
-   function fill_detail(){
-             var value=document.getElementById('student_select').value;
-           var checkup=document.getElementById('checkup_id').value;
-           		  $("#student_name").val('Loading....'); 
-		  $("#student_class").val('Loading....'); 
-          $("#student_section").val('Loading....'); 
-          $("#tc_student_father_name").val('Loading....'); 
-          $("#tc_mother_name").val('Loading....'); 
-          $("#date_of_birth").val('Loading....'); 
-          $("#date_of_birth_in_word").val('Loading....'); 
-          $("#tc_student_sssm_id_no").val('Loading....'); 
-          $("#tc_admission_date").val('Loading....'); 
-          $("#tc_admission_no").val('Loading....'); 
-          $("#school_roll_no").val('Loading....'); 
-          $("#class_in_which_admitted").val('Loading....'); 
-          $("#tc_student_class_leaving").val('Loading....'); 
-          $("#tc_student_uid_no").val('Loading....'); 
-		  $("#student_cwsn").val('Loading....'); 
-		  $("#student_cwsn_description").val('Loading....'); 
-			$.ajax({
-			  address: "POST",
-              url: access_link+"student/ajax_search_student_box_medical.php?id="+value+"",
-              cache: false,
-              success: function(detail){
-			  //alert_new(detail);
-                 var str =detail;
-		  var res = str.split("|?|");
-		 $("#student_roll_no").val(value); 
-		  $("#student_name").val(res[0]); 
-		  $("#student_class").val(res[1]); 
-          $("#student_section").val(res[2]);  
-          $("#tc_student_father_name").val(res[3]);  
-          $("#tc_mother_name").val(res[4]);  
-          $("#date_of_birth").val(res[5]);  
-          $("#date_of_birth_in_word").val(res[6]);  
-          $("#tc_student_sssm_id_no").val(res[7]);  
-          $("#tc_admission_date").val(res[8]);  
-          $("#tc_admission_no").val(res[9]);
-          $("#school_roll_no").val(res[10]);
-          $("#class_in_which_admitted").val(res[11]);  
-          $("#tc_student_class_leaving").val(res[12]);  
-          $("#tc_student_uid_no").val(res[13]);  
-		  $("#student_cwsn").val(res[14]); 
-		  $("#student_cwsn_description").val(res[15]); 
-        
-      
-              }
-           });
-		   fill_checkup();
-
-    }
-</script>
-<script type="text/javascript">
-   function fill_checkup(){
-           var value=document.getElementById('student_select').value;
-           var checkup=document.getElementById('checkup_id').value;
-           	  $("#student_major_illness").val('Loading....'); 
-		  $("#student_height").val('Loading....'); 
-		  $("#student_weight").val('Loading....'); 
-		  $("#checkup_date").val('Loading....'); 
-		  $("#checkup_hospital_name").val('Loading....'); 
-          $("#checkup_doctor_name").val('Loading....'); 
-          $("#checkup_bp").val('Loading....'); 
-          $("#checkup_hb").val('Loading....'); 
-          $("#checkup_suger").val('Loading....'); 
-          $("#checkup_hiv").val('Loading....'); 
-          $("#checkup_tb").val('Loading....'); 
-          $("#checkup_eye_problem").val('Loading....'); 
-          $("#checkup_specs").val('Loading....'); 
-          $("#checkup_left_specs_no").val('Loading....'); 
-          $("#checkup_right_specs_no").val('Loading....'); 
-          $("#checkup_remark").val('Loading....'); 
-          $("#checkup_discription").val('Loading....'); 
-          $("#checkup_marks").val('Loading....'); 
-		  $("#student_medical_history1").val('Loading....'); 
-			$.ajax({
-			  address: "POST",
-              url: access_link+"student/ajax_checkup_box.php?id="+value+"&&checkup="+checkup+"",
-              cache: false,
-              success: function(detail){
-                 var str =detail;
-		  var res = str.split("|?|");
-		
-		  
-		  $("#student_major_illness").val(res[1]);
-		  $("#student_height").val(res[2]);
-		  $("#student_weight").val(res[3]);
-		  $("#checkup_date").val(res[4]); 
-		  $("#checkup_hospital_name").val(res[5]); 
-          $("#checkup_doctor_name").val(res[6]);  
-          $("#checkup_bp").val(res[7]);  
-          $("#checkup_hb").val(res[8]);  
-          $("#checkup_suger").val(res[9]);  
-          $("#checkup_hiv").val(res[10]);  
-          $("#checkup_tb").val(res[11]);  
-          $("#checkup_eye_problem").val(res[12]);
-          $("#checkup_specs").val(res[13]);
-          $("#checkup_left_specs_no").val(res[14]);  
-          $("#checkup_right_specs_no").val(res[15]);  
-          $("#checkup_remark").val(res[16]);  
-          $("#checkup_discription").val(res[17]); 
-          $("#checkup_marks").val(res[18]); 
-		  $("#student_medical_history1").val(res[20]);
-		  drop(res[13]);
-		   detail1(res[0]);
-	
-
-		  	  var path=res[19];
-	
-		  if(res[19]!=''){
-
-		$("#show_checkup_report1").attr('src', path);
-            }else{
-                	$("#show_checkup_report1").attr('src', '../school_software/images/hostel_student_list.png');
-            }
-		
-		  
-              }
-           });
-
-    }
-</script>
+@include('common.header');
+@include('common.navbar');
 <script>
-function detail1(value1){
-if(value1=='Yes'){
-$('#for_yes').show();
+   window.scrollTo(0, 0);
+function payment_mode(value){
+if(value=='Cheque'){
+$('#for_cheque_date').show();
+$('#for_cheque_no').show();
+$('#for_cheque_name').show();
+$('#for_neft_account_no').hide();
+$('#for_neft_bank_name').hide();
+}else if(value=='NEFT'){
+$('#for_neft_account_no').show();
+$('#for_neft_bank_name').show();
+$('#for_cheque_date').hide();
+$('#for_cheque_no').hide();
+$('#for_cheque_name').hide();
 }else{
-$('#for_yes').hide();
+$('#for_cheque_date').hide();
+$('#for_cheque_no').hide();
+$('#for_cheque_name').hide();
+$('#for_neft_account_no').hide();
+$('#for_neft_bank_name').hide();
 }
 }
 </script>  
+
 <script>
-function drop(value){
-if(value=='Yes'){
-$('#for_eye_left').show();
-$('#for_eye_right').show();
-}else{
-$('#for_eye_left').hide();
-$('#for_eye_right').hide();
+function total_fee(){
+var add = 0;
+$('.amt').each(function() {
+add += Number($(this).val());
+});
+document.getElementById('total_paid').value = add;
 }
-}
-      	      $("#my_form").submit(function(e){
+</script>
+<script type="text/javascript">
+   function fill_detail(){
+   var value=document.getElementById('select_student').value;
+   var term=document.getElementById('fitness_test').value;
+  if (value!=''){    
+       $("#student_name").val('Loading....');
+        $("#student_father_name").val('Loading....');
+         $("#student_roll_no").val('Loading....');
+          $("#student_class").val('Loading....');
+           $("#student_class_section").val('Loading....');
+			$.ajax({
+			  address: "POST",
+              url: access_link+"student/ajax_physical_fitness.php?id="+value+"&&term="+term+"",
+              cache: false,
+              success: function(detail){
+                 var str =detail;
+				 $("#fee_details").html(str);
+           }
+           }); 
+		   }
+
+         
+    }
+	function fitness_detail(value,id){
+	if(id=="body_weight"){
+					   if(value<=34.9){
+					   $('#body_weight_zone').val('Zone1');
+					   $('#body_weight_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#body_weight_zone').val('Zone2');
+					   $('#body_weight_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#body_weight_zone').val('Zone3');
+					   $('#body_weight_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="body_height"){
+					   if(value<=34.9){
+					   $('#body_height_zone').val('Zone1');
+					   $('#body_height_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#body_height_zone').val('Zone2');
+					   $('#body_height_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#body_height_zone').val('Zone3');
+					   $('#body_height_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="pacer"){
+					   if(value<=34.9){
+					   $('#pacer_zone').val('Zone1');
+					   $('#pacer_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#pacer_zone').val('Zone2');
+					   $('#pacer_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#pacer_zone').val('Zone3');
+					   $('#pacer_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="trunk_lift"){
+					   if(value<=34.9){
+					   $('#trunk_lift_zone').val('Zone1');
+					   $('#trunk_lift_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#trunk_lift_zone').val('Zone2');
+					   $('#trunk_lift_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#trunk_lift_zone').val('Zone3');
+					   $('#trunk_lift_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="sit_reach_l"){
+					   if(value<=34.9){
+					   $('#sit_reach_l_zone').val('Zone1');
+					   $('#sit_reach_l_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#sit_reach_l_zone').val('Zone2');
+					   $('#sit_reach_l_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#sit_reach_l_zone').val('Zone3');
+					   $('#sit_reach_l_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="sit_reach_r"){
+					   if(value<=34.9){
+					   $('#sit_reach_r_zone').val('Zone1');
+					   $('#sit_reach_r_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#sit_reach_r_zone').val('Zone2');
+					   $('#sit_reach_r_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#sit_reach_r_zone').val('Zone3');
+					   $('#sit_reach_r_description').val('Exceeds HZ');
+					   }
+    }else  if(id=="sit_reach_r"){
+					   if(value<=34.9){
+					   $('#sit_reach_r_zone').val('Zone1');
+					   $('#sit_reach_r_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#sit_reach_r_zone').val('Zone2');
+					   $('#sit_reach_r_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#sit_reach_r_zone').val('Zone3');
+					   $('#sit_reach_r_description').val('Exceeds HZ');
+					   }
+    }else if(id=="curl_ups"){
+	                  if(value<=34.9){
+					   $('#curl_zone').val('Zone1');
+					   $('#curl_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#curl_zone').val('Zone2');
+					   $('#curl_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#curl_zone').val('Zone3');
+					   $('#curl_description').val('Exceeds HZ');
+					   }
+	  }else if(id=="standing_raw"){
+	                  if(value<=34.9){
+					   $('#standing_zone').val('Zone1');
+					   $('#standing_description').val('Below HZ');
+					   }else if(value>=35 && value<=42.9){
+						$('#standing_zone').val('Zone2');
+					   $('#standing_description').val('Within HZ');
+					   }
+					   else if(value>=43){
+						$('#standing_zone').val('Zone3');
+					   $('#standing_description').val('Exceeds HZ');
+					   }
+	  }
+   }
+	
+function validate(){
+var x = document.forms["myForm"]["student_name"].value;
+    if (x=="") {
+        alert_new("Student Nmae Must Be required !!!","red");
+        return false;
+    }
+}	
+$("#my_form").submit(function(e){
         e.preventDefault();
 
     var formdata = new FormData(this);
-window.scrollTo(0, 0);
-     $("#get_content").html(loader_div);
+
         $.ajax({
-            url: access_link+"student/health_zone_api.php",
+            url: access_link+"student/physical_fitness_api.php",
             type: "POST",
             data: formdata,
             mimeTypes:"multipart/form-data",
@@ -155,50 +190,51 @@ window.scrollTo(0, 0);
             cache: false,
             processData: false,
             success: function(detail){
+			
                var res=detail.split("|?|");
 			   if(res[1]=='success'){
 				   alert_new('Successfully Complete',"green");
-				   get_content('student/health_zone');
+				   get_content('student/physical_fitness');
             }
 			}
          });
       });
-</script>
+	
+</script> 
+
 
     <section class="content-header">
       <h1>
          Student Management        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-    		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
+  		<li><a href="javascript:get_content('index_content')"><i class="fa fa-dashboard"></i> Home</a></li>
 	  <li><a href="javascript:get_content('student/students')"><i class="fa fa-graduation-cap"></i> Student</a></li>
-      <li class="active">Medical Fitness</li> </ol>
+	  <li class="active">Fitness</li>
+      </ol>
     </section>
 
+	
+	
+	<!---*****************###########################################*********************************-->
 
 	
 	
-	<!---*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************-->
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
 	       <!-- general form elements disabled -->
           <div class="box box-primary my_border_top">
-            <div class="box-header with-border ">
-              <h3 class="box-title">Health Zone</h3>
-            </div>
-            <!-- /.box-header -->
-<!------------------------------------------------Start Registration form--------------------------------------------------->
-				<form role="form" method="post" enctype="multipart/form-data" id="my_form">
-            <div class="box-body "  >
-
-		
-			<div class="col-md-12">
-			 <div class="col-md-6 ">				
-					<div class="form-group" >
+           
+            <!-- /.box-header -->			
+        <div class="box-body">
+		<br>
+		<div class="col-md-12">
+			<div class="col-md-6 ">				
+					<div class="form-group">
 					  <label>Search Student</label>
-					  <select name="" class="form-control select2" id="student_select" onchange="fill_detail();" required>
+					  <select name="select_student" id="select_student" class="form-control select2" onchange="fill_detail();"style="width:100%" >
 					  <option value="">Select student</option>
 					        							<option value="2000298">Umesh[]-[]-[2ND-B]-[Rajesh-5666688]</option>
 														<option value="2000314">Rajesh Prasad[]-[]-[2ND-B]-[Ananda Prasad-9135956095]</option>
@@ -460,265 +496,146 @@ window.scrollTo(0, 0);
 												  </select>
 					</div>
 			</div>
-		  </div>
-			
-			
-			         <div class="col-md-3 ">
-						<div class="form-group">
-						  <label>student Name</label>
-						   <input type="text"  name="student_name" value="" placeholder="student Name"   id="student_name" class="form-control" readonly>
-						</div>
-					 </div>
-					 
-				     <div class="col-md-3 ">
-						<div class="form-group">
-						  <label>Class</label>
-						   <input type="text"  name="student_class" value="" placeholder="Class"  id="student_class" class="form-control" readonly>
-						</div>
-					 </div>
-					  
-				    <div class="col-md-3 ">
-						<div class="form-group">
-						  <label>Student Section</label>
-						   <input type="text"  name="student_class_section" value="" placeholder="Student Section"  id="student_section" class="form-control" readonly>
-						  </div>
-					</div>
-					
-					<div class="col-md-3 ">
-						<div class="form-group">
-						  <label>Student Roll No</label>
-						   <input type="text"  name="student_roll_no" value="" placeholder="Student Roll No"  id="student_roll_no" class="form-control" readonly>
-						  </div>
-					</div>
-
-                  <div class="col-md-3 ">	
-					<div class="form-group" >
-					  <label>Father's Name</label>
-					  <input type="text"  name="student_father_name" id="tc_student_father_name" placeholder="Father's Name"  value="" class="form-control" readonly>
-					</div>
-				  </div>
-
-
-				 
-				 <div class="col-md-3 ">	
-                     <div class="form-group" >
-					  <label>Student CWSN</label>
-					  <input type="text"  name="student_cwsn" value="" placeholder="Student CWSN"  id="student_cwsn" class="form-control" readonly>
-					</div>
-				 </div>
-				 
-				 <div class="col-md-3 ">	
-                     <div class="form-group" >
-					  <label>Student CWSN Description</label>
-					  <input type="text"  name="student_cwsn_description" value="" placeholder="Student CWSN Description"  id="student_cwsn_description" class="form-control" readonly>
-					</div>
-				 </div>
-				 
-				  <div class="col-md-3">	
-                     <div class="form-group" >
-					  <label>Medical History</label>
-					  <select name="student_medical_history" id="student_medical_history1" class="form-control" onchange="detail1(this.value);" required>
-			        <option value="No">No</option>
-					  <option value="Yes">Yes</option>
-					
+			<div class="col-md-6 ">	
+			   
+			       <div class="form-group">
+				      <label>Fitness Test</label>
+					  <select class="form-control" id="fitness_test" onchange="fill_detail();" >
+					       <option value="term1">Term 1</option>
+					       <option value="term2">Term 2</option>
 					  </select>
-					</div>
-                   </div>
-				 
-				 <div class="col-md-3" style="display:none;" id="for_yes">	
-                     <div class="form-group" >
-					  <label>Major Illness</label>
-					  <input type="text"  name="student_major_illness" value="" placeholder="Major Illness"  id="student_major_illness" class="form-control" >
-					</div>
-                 </div>
-				 
-				 <div class="col-md-3 ">	
-                     <div class="form-group" >
-					  <label>Student Height</label>
-					  <input type="text"  name="student_height" value="" placeholder="Student Height"  id="student_height" class="form-control" >
-					</div>
-				 </div>
-				 
-				 <div class="col-md-3 ">	
-                     <div class="form-group" >
-					  <label>Student weight</label>
-					  <input type="text"  name="student_weight" value="" placeholder="Student weight"  id="student_weight" class="form-control" >
-					</div>
-				 </div>
-				 
-				 
-				 
-		    
+				   </div>
 			
-			<div class="col-md-12">
-			   <div class="col-md-4 ">				
-					<div class="form-group" >
-					  <label>Health Checkup</label>
-					  <select name="health_checkup" id="checkup_id" class="form-control " onchange="fill_checkup();" required>
-					  <option value="checkup1">Checkup1</option>
-					  <option value="checkup2">Checkup2</option>
-					  </select>
-					</div>
-				</div>
 			</div>
-				
-				<div class="col-md-4">	
-                     <div class="form-group" >
-					  <label>Checkup Date</label>
-					  <input type="date"  name="checkup_date" value="" placeholder=""  id="checkup_date" class="form-control" >
-					</div>
-				 </div>
-				 
-				  <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Hospital Name</label>
-						   <input type="text"  name="checkup_hospital_name" value="" placeholder="Hospital Name"   id="checkup_hospital_name" class="form-control" >
-						</div>
-			      </div>
-				  
-				  <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Doctor Name</label>
-						   <input type="text"  name="checkup_doctor_name" value="" placeholder="Doctor Name"   id="checkup_doctor_name" class="form-control" >
-						</div>
-			      </div>
-				  	<div class="col-md-3">	
-					<div class="form-group">
-				 <label>Checkup Report</label>
-					  <input type="file" name="checkup_report1" id="checkup_report1" placeholder="" onchange="check_file_type(this,'checkup_report1','show_checkup_report1','image');"class="form-control" accept=" .jpg, .jpeg, .png" value="">
-					</div>
-				</div>
-				<div class="col-md-1">	
-					<div class="form-group">
-					   <img id="show_checkup_report1" src='../school_software_v1_old/images/hostel_student_list.png' width='60px' height='60px'>
-					</div>
-				</div>
-		</div>	
-		
-		           <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Blood Group</label>
-						   <input type="text"  name="blood_group" value="" placeholder="blood_group"   id="blood_group" class="form-control" >
-						</div>
-			      </div>
-		           
-				  <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Blood Pressure Level</label>
-						   <input type="number"  name="checkup_bp" value="" placeholder="Blood Pressure Level"   id="checkup_bp" class="form-control" >
-						</div>
-			      </div>
-				  
-				  <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Hemoglobin Level</label>
-						   <input type="number"  name="checkup_hb" value="" placeholder="Hemoglobin Level" id="checkup_hb" class="form-control" >
-						</div>
-			      </div>
-				  
-				  <div class="col-md-4 ">
-						<div class="form-group">
-						  <label>Diabetes Level</label>
-						   <input type="number"  name="checkup_suger" value="" placeholder="Diabetes Level" id="checkup_suger" class="form-control" >
-						</div>
-			      </div>
-				  
-				  <div class="col-md-4">	
-                    <div class="form-group" >
-					   <label>HIV</label>
-					   <select name="checkup_hiv" class="form-control " id="checkup_hiv"  required>
-					   <option value="No">No</option>
-					   <option value="Yes">Yes</option>
-					   </select>
-					 </div>
-                   </div>
-				   
-				   <div class="col-md-4">	
-                     <div class="form-group" >
-					  <label>TB Infection</label>
-					  <select name="checkup_tb" class="form-control " id="checkup_tb" required>
-					  <option value="No">No</option>
-					  <option value="Yes">Yes</option>
-					  </select>
-					  </div>
-                   </div>
-				   
-				   <div class="col-md-4">	
-                     <div class="form-group" >
-					  <label>Eye Problem</label>
-					  <select name="eye_problem" class="form-control " id="checkup_eye_problem"  required>
-					  <option value="No">No</option>
-					  <option value="Yes">Yes</option>
-					  </select>
-					  </div>
-                   </div>
-				   
-				   <div class="col-md-4">	
-                     <div class="form-group"  >
-					  <label>Specs</label>
-					  <select name="specs" class="form-control " id="checkup_specs" onchange="drop(this.value);"  required>
-					  <option value="No">No</option>
-					  <option value="Yes">Yes</option>
-					  </select>
-					  </div>
-                   </div>
-				   
-				   <div class="col-md-2 " style="display:none;" id="for_eye_left">	
-                     <div class="form-group" >
-					  <label>Left Side No.</label>
-					  <input type="number"  name="left_specs_no" value="" placeholder="Left Side No."  id="checkup_left_specs_no" class="form-control" >
-					</div>
-				  </div>
-				  
-				  <div class="col-md-2 " style="display:none;" id="for_eye_right">	
-                     <div class="form-group" >
-					  <label>Right Side No.</label>
-					  <input type="number"  name="right_specs_no" value="" placeholder="Right Side No."  id="checkup_right_specs_no" class="form-control" >
-					</div>
-				  </div>
-				  
-				  <div class="col-md-4 ">	
-                     <div class="form-group" >
-					  <label>Remark</label>
-					  <input type="text"  name="checkup_remark" value="" placeholder="Remark"  id="checkup_remark" class="form-control" >
-					</div>
-				  </div>
-				  
-				  <div class="col-md-4 ">	
-                     <div class="form-group" >
-					  <label>Descrption</label>
-					  <input type="text"  name="checkup_discription" value="" placeholder="Descrption"  id="checkup_discription" class="form-control" >
-					</div>
-				  </div>
-				  
-				  <div class="col-md-4 ">	
-                     <div class="form-group" >
-					  <label>Health Marks</label>
-					  <input type="text"  name="checkup_marks" value="" placeholder="Health Marks"  id="checkup_marks" class="form-control" >
-					</div>
-				  </div>
-				 
-				   
-				  
-				  <div class="col-md-12">
-				<center><input type="submit" name="submit" value="Submit" class="btn btn-success" /></center>
-				
-				</div>
-				
-				
-				
-		</form>	
+		</div>
+		</div>
+			<div class="box-body">
+			<br> 
 		<div class="col-md-12">
-		        
-		  </div>
-	</div>
+    <form name="myForm" method="post" enctype="multipart/form-data" id="my_form">
+	<div class="" id="fee_details">
+		    <div class="box-body col-md-3">
+                <div class="form-group">
+                  <label>Fitness Test Date</label>
+                  <input type="date"  name="fitness_test_date" placeholder=""  value="2022-12-03" class="form-control">
+                </div>
+			    <div class="form-group">
+                  <label>student Name</label>
+                  <input type="text" name="student_name" id="student_name" placeholder="student Name"  value="" class="form-control" readonly />
+                </div>
+				<div class="form-group">
+                  <label>Father's Name</label>
+                  <input type="text"  name="student_father_name" id="student_father_name" placeholder="Father's Name"  value="" class="form-control" readonly />
+                </div>
+				<div class="form-group">
+                  <label>Student Unique Id</label>
+                  <input type="hidden"  name="student_roll_no"   value="" class="form-control" readonly />
+				  <input type="text"  id="student_roll_no" placeholder="Student Unique Id"  value="" class="form-control" readonly />
+                </div>
+			    <div class="form-group">
+                  <label>Class</label>
+                  <input type="text"  name="student_class" id="student_class" placeholder="Class"  value="" class="form-control" readonly />
+                </div>
+				<div class="form-group">
+                  <label>Section</label>
+                  <input type="text"  name="student_class_section" id="student_class_section" placeholder="Section"  value="" class="form-control" readonly />
+                </div>
+				
+			
+				
+			</div>
+			<div class="col-md-1">
+			</div>
+		<div style="border:1px solid" id="fitness_div" class="box-body table-responsive col-md-6" id="example2">
+		<center><h4 style="color:red;">Fitness Scores</h4></center>
+               <table class="table table-bordered table-striped">
+			   <thead >
+			     <tr>
+				   <th>Part Of Fitness</th>
+				   <th>Test</th>
+				   <th>Raw Score</th>
+				   <th>Zone</th>
+				   <th>Descrption</th>
+			     </tr>
+			 </thead>
+			 <tbody>
+			    <tr>
+			      <td rowspan="2">Body Composition</td>
+			      <td>Body Weight</td>
+			      <td><input type="number" id="body_weight" name="body_weight_rawscore" oninput="fitness_detail(this.value,this.id)" class="form-control"></td>
+			      <td><input type="text" id="body_weight_zone" name="body_weight_zone" class="form-control" readonly></td>
+			      <td><input type="text" id="body_weight_description" name="body_weight_description" class="form-control"readonly></td>
+			    </tr>
+				<tr>
+			      <td>Body Height</td>
+			      <td><input type="number" oninput="fitness_detail(this.value,this.id)" id="body_height" name="body_height_rawscore" class="form-control"></td>
+			      <td><input type="text" id="body_height_zone" name="body_height_zone" class="form-control"readonly></td>
+			      <td><input type="text" id="body_height_description" name="body_height_description" class="form-control"readonly></td>
+			    </tr>
+				<tr>
+			      <td>Cardio Resiratory Endurance</td>
+			      <td>Pacer(20m)</td>
+			      <td><input type="number" oninput="fitness_detail(this.value,this.id)" name="pacer_raw_score" id="pacer" class="form-control"></td>
+			      <td><input type="text" id="pacer_zone" name="pacer_zone" class="form-control" readonly></td>
+			      <td><input type="text" id="pacer_description" name="pacer_description" class="form-control" readonly></td>
+			    </tr>
+				<tr>
+			      <td rowspan="3">Flexibility</td>
+			      <td>Trunk Lift</td>
+			      <td><input type="number" oninput="fitness_detail(this.value,this.id)" id="trunk_lift" name="trunk_lift_raw_score" class="form-control"></td>
+			      <td><input type="text" id="trunk_lift_zone" name="trunk_lift_zone" class="form-control" readonly></td>
+			      <td><input type="text" id="trunk_lift_description" name="trunk_lift_description" class="form-control" readonly></td>
+			    </tr>
+				<tr>
+			      <td>Sit And reach(L)</td>
+			      <td><input type="number" name="sit_reach_l_raw_score" oninput="fitness_detail(this.value,this.id)" id="sit_reach_l" class="form-control"></td>
+			      <td><input type="text" name="sit_reach_l_zone" id="sit_reach_l_zone" class="form-control" readonly></td>
+			      <td><input type="text" name="sit_reach_l_description" id="sit_reach_l_description" class="form-control" readonly></td>
+			    </tr>
+				<tr>
+			      <td>Sit And reach(R)</td>
+			      <td><input type="number" name="sit_reach_r_raw_score" id="sit_reach_r" oninput="fitness_detail(this.value,this.id)" class="form-control"></td>
+			      <td><input type="text" name="sit_reach_r_zone" id="sit_reach_r_zone" class="form-control" readonly></td>
+			      <td><input type="text" name="sit_reach_r_description" id="sit_reach_r_description" class="form-control" readonly></td>
+			    </tr>
+				<tr>
+			      <td>Muscular Endurance</td>
+			      <td>Curl-ups</td>
+			      <td><input type="number" name="curl_raw_score" id="curl_ups" oninput="fitness_detail(this.value,this.id)" class="form-control"></td>
+			      <td><input type="text" name="curl_zone" id="curl_zone" class="form-control" readonly></td>
+			      <td><input type="text" name="curl_description" id="curl_description" class="form-control" readonly></td>
+			    </tr>
+				<tr>
+			      <td>Muscular Strength</td>
+			      <td>Standing Long Jump</td>
+			      <td><input type="number" name="standing_raw_score" id="standing_raw" oninput="fitness_detail(this.value,this.id)" class="form-control"></td>
+			      <td><input type="text" name="standing_zone" id="standing_zone" class="form-control" readonly></td>
+			      <td><input type="text" name="standing_description" id="standing_description" class="form-control" readonly></td>
+			    </tr>
+			 </tbody>
+			   </table>
+		</div>
+		</div>
+		
+		    <div class="box-body ">
+			    <div class="col-md-6">
+		            <center><input type="submit" name="finish" value="Submit" class="btn btn-success" /></center>
+		        </div>
+			</div>
+	</div>			<br/>
+	</form>			
+</div>
 <!---------------------------------------------End Registration form--------------------------------------------------------->
 		  <!-- /.box-body -->
-          </div>
-    </div>
+  </div>
+  </div>
+</div>
 </section>
-
+@include('common.footer');
  <script>
-    $('.select2').select2();
+  $(function () {
+  
+    $('.select2').select2()
 
+  })
 </script>

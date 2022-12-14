@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
 <script type="text/javascript">
    function fill_detail(value){
            $("#student_name").val('Loading....'); 
@@ -692,7 +694,7 @@ window.open(pdf_path+"marksheet_page/"+marksheet_final_pdf+"?roll_no="+student_r
 							 </div>
 							 </div>
 					      </form>			
-			          
+						  @include('common.footer');
 	
 <script>
   $(function () {

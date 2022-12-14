@@ -1,3 +1,5 @@
+@include('common.header');
+@include('common.navbar');
  <script>
 function for_print()
  {
@@ -5,9 +7,29 @@ function for_print()
  newWin= window.open("");
  newWin.document.write(divToPrint.outerHTML);
  newWin.print();
- newWin.close();
-
+ var isAndroid = /(android)/i.test(navigator.userAgent);
+ if(!isAndroid){
+  newWin.close();   
  }
+ }
+ 
+function check_function()
+{
+    $("#example1").html(loader_div);
+    if($("#all_medium").prop("checked")==true){
+        var value='Yes';
+    }else{
+        var value='No';
+    }
+    $.ajax({
+        type:"POST",
+        url:access_link+"student/report_student_strength_castewise_filter_checked.php?checked="+value+"",
+        cache:false,
+        success:function(detail){
+           $("#example1").html(detail);
+        }
+    });
+}
 </script>
     <section class="content-header">
       <h1>
@@ -28,13 +50,18 @@ function for_print()
 		<div class="col-md-12">
 		
 			  <div class="col-md-6">
-			  <center><button type="button" class="btn default" onclick="exportTableToExcel('printTable', 'Religion Wise Student Data')"><i class="fa fa-print" aria-hidden="true"></i>Print In Excel</button></center>
+			  <center><button type="button" class="btn default" onclick="exportTableToExcel('printTable', 'Caste Wise Student Data')"><i class="fa fa-print" aria-hidden="true"></i>Print In Excel</button></center>
 			  </div>
 			  <div class="col-md-6">
 			  <center><button type="button" class="btn default" onclick="for_print();"><i class="fa fa-print" aria-hidden="true"></i>Print In Pdf</button></center>
 			  </div>
 		</div>
         </div>
+            <div class="col-md-12">
+                <div style="float: right;">
+                    <label><input type="checkbox" onclick="check_function();" name="all_medium" id="all_medium" value="" />Plz check for Both Medium</label>
+                </div>
+            </div>
         <div class="col-md-12">
          
           <!-- /.box -->
@@ -49,10 +76,10 @@ function for_print()
 			  </div>
 			  <div class="col-md-12">
 			  <div class="col-md-3">
-			  <center><b>Dise Code : 23260100164</b></center>
+	          <center><b>Dise Code : 23260100164</b></center>
 			  </div>
 			  <div class="col-md-6">
-				<span style="font-size:20px;font-weight:bold"><center>STUDENT STRENGTH INFO Religion Wise</center></span>
+				<span style="font-size:20px;font-weight:bold"><center>Caste Wise STUDENT STRENGTH INFO</center></span>
 			  </div>
 			  <div class="col-md-3">
 			  <center><b>School Code : 50702</b></center>
@@ -65,47 +92,38 @@ function for_print()
 				<td style="float:right"><b></b></td>
 			  </tr>
 			  </table>
-            <div class="box-body table-responsive" >
+            <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped" border="1px" cellpadding="10px" cellspacing="0" width="100%">
                 <thead >
-                <tr>
-				  <th rowspan="2">Serial No</th>
-				  <th rowspan="2">Class</th>
-				  <th rowspan="2">Total Students</th>
-				  <th rowspan="2">Total Boys</th>
-				  <th rowspan="2">Total Girls</th>
-				  <th colspan="3">Hindu</th>
-				  <th colspan="3">Muslim</th>
-				  <th colspan="3">Sikh</th>
-				  <th colspan="3">Christian</th>
-				  <th colspan="3">Jain</th>
-				  <th colspan="3">Buddh</th>
-				  <th colspan="3">Other</th>
-						  
-                </tr>
-				   <tr>
-				  <th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>
-					<th>Boy</th>
-				  <th>Girl</th>
-				  <th>Total</th>				  
-                </tr>
+                    <tr>
+                        <th rowspan="2">Serial No</th>
+                        <th rowspan="2">Class</th>
+                        <th rowspan="2">Total Students</th>
+                        <th rowspan="2">Total Boys</th>
+                        <th rowspan="2">Total Girls</th>
+                        <th colspan="3">Total Gen</th>
+                        <th colspan="3">Total Obc</th>
+                        <th colspan="3">Total SC</th>
+                        <th colspan="3">Total ST</th>
+                        <th colspan="3">Total Other</th>				  
+                    </tr>
+    				<tr>
+                        <th>Boy</th>
+                        <th>Girl</th>
+                        <th>Total</th>
+                        <th>Boy</th>
+                        <th>Girl</th>
+                        <th>Total</th>
+                        <th>Boy</th>
+                        <th>Girl</th>
+                        <th>Total</th>
+                        <th>Boy</th>
+                        <th>Girl</th>
+                        <th>Total</th>
+                        <th>Boy</th>
+                        <th>Girl</th>
+                        <th>Total</th>				  
+                    </tr>
                 </thead>
                 <tbody>
 				
@@ -122,18 +140,12 @@ function for_print()
                   <td><b>19</b></td>
                   <td><b>16</b></td>
                   <td><b>3</b></td>
-                  <td><b>16</b></td>
-                  <td><b>3</b></td>
-                  <td><b>19</b></td>
+                  <td><b>2</b></td>
                   <td><b>0</b></td>
+                  <td><b>2</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -153,18 +165,12 @@ function for_print()
                   <td><b>15</b></td>
                   <td><b>10</b></td>
                   <td><b>5</b></td>
-                  <td><b>9</b></td>
-                  <td><b>4</b></td>
-                  <td><b>13</b></td>
+                  <td><b>2</b></td>
+                  <td><b>3</b></td>
+                  <td><b>5</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
                   <td><b>1</b></td>
-                  <td><b>1</b></td>
-				  <td><b>1</b></td>
-                  <td><b>0</b></td>
-                  <td><b>1</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -184,18 +190,12 @@ function for_print()
                   <td><b>42</b></td>
                   <td><b>35</b></td>
                   <td><b>7</b></td>
-                  <td><b>34</b></td>
-                  <td><b>6</b></td>
-                  <td><b>40</b></td>
-                  <td><b>1</b></td>
-                  <td><b>1</b></td>
+                  <td><b>5</b></td>
                   <td><b>2</b></td>
-				  <td><b>0</b></td>
+                  <td><b>7</b></td>
+                  <td><b>2</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>2</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -215,16 +215,10 @@ function for_print()
                   <td><b>12</b></td>
                   <td><b>10</b></td>
                   <td><b>2</b></td>
-                  <td><b>9</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
                   <td><b>2</b></td>
-                  <td><b>11</b></td>
-                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>1</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
 				  <td><b>0</b></td>
@@ -246,24 +240,18 @@ function for_print()
                   <td><b>59</b></td>
                   <td><b>51</b></td>
                   <td><b>8</b></td>
-                  <td><b>51</b></td>
+                  <td><b>5</b></td>
+                  <td><b>3</b></td>
                   <td><b>8</b></td>
-                  <td><b>59</b></td>
+                  <td><b>6</b></td>
                   <td><b>0</b></td>
+                  <td><b>6</b></td>
+				  <td><b>1</b></td>
                   <td><b>0</b></td>
+                  <td><b>1</b></td>
+				  <td><b>4</b></td>
                   <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>4</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -277,18 +265,12 @@ function for_print()
                   <td><b>9</b></td>
                   <td><b>8</b></td>
                   <td><b>1</b></td>
-                  <td><b>8</b></td>
                   <td><b>0</b></td>
-                  <td><b>8</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>1</b></td>
                   <td><b>1</b></td>
+                  <td><b>0</b></td>
+                  <td><b>0</b></td>
+                  <td><b>0</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -308,18 +290,12 @@ function for_print()
                   <td><b>14</b></td>
                   <td><b>14</b></td>
                   <td><b>0</b></td>
-                  <td><b>14</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>14</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -339,21 +315,15 @@ function for_print()
                   <td><b>13</b></td>
                   <td><b>13</b></td>
                   <td><b>0</b></td>
-                  <td><b>13</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>13</b></td>
+                  <td><b>1</b></td>
+                  <td><b>2</b></td>
                   <td><b>0</b></td>
+                  <td><b>2</b></td>
+				  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -370,18 +340,12 @@ function for_print()
                   <td><b>12</b></td>
                   <td><b>8</b></td>
                   <td><b>4</b></td>
-                  <td><b>8</b></td>
-                  <td><b>4</b></td>
-                  <td><b>12</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -401,27 +365,21 @@ function for_print()
                   <td><b>18</b></td>
                   <td><b>9</b></td>
                   <td><b>9</b></td>
-                  <td><b>9</b></td>
-                  <td><b>9</b></td>
-                  <td><b>18</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>4</b></td>
+                  <td><b>4</b></td>
+                  <td><b>1</b></td>
+                  <td><b>2</b></td>
+                  <td><b>3</b></td>
 				  <td><b>0</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
+				  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
 
                   
                 </tr>
@@ -432,16 +390,10 @@ function for_print()
                   <td><b>29</b></td>
                   <td><b>25</b></td>
                   <td><b>4</b></td>
-                  <td><b>25</b></td>
-                  <td><b>4</b></td>
-                  <td><b>29</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
+                  <td><b>2</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
 				  <td><b>0</b></td>
@@ -463,18 +415,12 @@ function for_print()
                   <td><b>6</b></td>
                   <td><b>6</b></td>
                   <td><b>0</b></td>
-                  <td><b>6</b></td>
-                  <td><b>0</b></td>
-                  <td><b>6</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
-				  <td><b>0</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                  <td><b>1</b></td>
 				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
@@ -494,16 +440,10 @@ function for_print()
                   <td><b>1</b></td>
                   <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>1</b></td>
-                  <td><b>0</b></td>
-                  <td><b>1</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
 				  <td><b>0</b></td>
@@ -525,16 +465,10 @@ function for_print()
                   <td><b>5</b></td>
                   <td><b>3</b></td>
                   <td><b>2</b></td>
-                  <td><b>3</b></td>
-                  <td><b>2</b></td>
-                  <td><b>5</b></td>
                   <td><b>0</b></td>
+                  <td><b>1</b></td>
+                  <td><b>1</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
 				  <td><b>0</b></td>
@@ -556,16 +490,10 @@ function for_print()
                   <td><b>3</b></td>
                   <td><b>3</b></td>
                   <td><b>0</b></td>
-                  <td><b>3</b></td>
-                  <td><b>0</b></td>
-                  <td><b>3</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
                   <td><b>0</b></td>
                   <td><b>0</b></td>
 				  <td><b>0</b></td>
@@ -580,35 +508,29 @@ function for_print()
 
                   
                 </tr>
-                					<tr>
-                  <td><b></b></td>
-                  <td style="color:red;"><b>All Class</b></td>
-                  <td><b>257</b></td>
-                  <td><b>212</b></td>
-                  <td><b>45</b></td>
-                  <td><b>209</b></td>
-                  <td><b>42</b></td>
-                  <td><b>251</b></td>
-                  <td><b>2</b></td>
-                  <td><b>2</b></td>
-                  <td><b>4</b></td>
-				  <td><b>1</b></td>
-                  <td><b>0</b></td>
-                  <td><b>1</b></td>
-		          <td><b>0</b></td>
-                  <td><b>1</b></td>
-                  <td><b>1</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
-				  <td><b>0</b></td>
-                  <td><b>0</b></td>
-                  <td><b>0</b></td>
+                				<tr>
+                    <td><b></b></td>
+                    <td style="color:red;"><b>All Class</b></td>
+                    <td><b>257</b></td>
+                    <td><b>212</b></td>
+                    <td><b>45</b></td>
+                    <td><b>19</b></td>
+                    <td><b>16</b></td>
+                    <td><b>35</b></td>
+                    <td><b>15</b></td>
+                    <td><b>3</b></td>
+                    <td><b>18</b></td>
+                    <td><b>2</b></td>
+                    <td><b>1</b></td>
+                    <td><b>3</b></td>
+                    <td><b>5</b></td>
+                    <td><b>0</b></td>
+                    <td><b>5</b></td>
+                    <td><b>0</b></td>
+                    <td><b>1</b></td>
+                    <td><b>1</b></td>
                 </tr>
-                </tbody>
+               </tbody>
              </table>
             </div>
             <!-- /.box-body -->
@@ -620,14 +542,14 @@ function for_print()
 	  <div class="col-md-12">&nbsp;</div>
 			  <div class="col-md-12">
 			  <div class="col-md-6">
-			  <center><button type="button" class="btn btn-success" onclick="exportTableToExcel('printTable', 'Religion Wise Student Data')"><i class="fa fa-print" aria-hidden="true"></i>  Print In Excel</button></center>
+			  <center><button type="button" class="btn btn-success" onclick="exportTableToExcel('printTable', 'Caste Wise Student Data')"><i class="fa fa-print" aria-hidden="true"></i>  Print In Excel</button></center>
 			  </div>
 			  <div class="col-md-6">
 			  <center><button type="button" class="btn btn-primary" onclick="for_print();"><i class="fa fa-print" aria-hidden="true"></i>  Print In Pdf</button></center>
 			  </div>
 			  </div>
     </section>
-
+    @include('common.footer');
 <script>
 function exportTableToExcel(tableID, filename = ''){
     var downloadLink;
